@@ -8,8 +8,8 @@
       "description": "Nowoczesna aplikacja webowa do planowania i zarządzania projektami zespołowymi z zaawansowanymi funkcjonalnościami współpracy.",
       "images": [
         {
-          "url": "/projects/plannero/analytics.jpg",
-          "alt": "Plannero - Reports & Analytics dashboard with delivery metrics and KPIs"
+          "url": "/projects/plannero.png",
+          "alt": "Plannero - Aplikacja do zarządzania dostawami"
         },
         {
           "url": "/projects/plannero/problem.jpg",
@@ -41,8 +41,8 @@
       "description": "Strona internetowa dla kancelarii prawnej specjalizującej się w prawie jeździeckim i ochronie zwierząt.",
       "images": [
         {
-          "url": "/projects/lexhippica/homepage.jpg",
-          "alt": "LexHippica - Homepage with hero section featuring horses"
+          "url": "/projects/lexhippica.png",
+          "alt": "LexHippica - Strona usług prawnych"
         },
         {
           "url": "/projects/lexhippica/landing.jpg",
@@ -69,8 +69,8 @@
       "name": "Pattern Market: The Ultimate Pattern Marketplace",
       "description": "Pattern Market to rynek wzorów, gdzie użytkownicy mogą kupować, sprzedawać i dzielić się szablonami rzemieślniczymi. Wspiera kreatywną społeczność z bezpiecznymi transakcjami, profilami użytkowników i zarządzaniem zamówieniami.",      "status": "W trakcie rozwoju",      "images": [
         {
-          "url": "/projects/patternmarket/home.jpg",
-          "alt": "Pattern Market - Strona główna"
+          "url": "/projects/pattern-market.png",
+          "alt": "Pattern Market - Rynek wzorów projektowych"
         }
       ],
       "technologies": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Docker", "Firebase", "SCSS"],

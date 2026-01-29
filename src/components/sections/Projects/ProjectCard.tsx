@@ -77,6 +77,13 @@ const Thumbnail = styled.button<{ isActive: boolean }>`
   }
 `;
 
+const ProjectImage = styled.img`
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+`;
+
 const Content = styled.div`
   padding: ${theme.spacing[8]};
   display: flex;
@@ -191,6 +198,9 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
 
       <Content>
         <ProjectName>{name}</ProjectName>
+        {images && images.length > 0 && (
+          <ProjectImage src={images[0].url} alt={images[0].alt} />
+        )}
         <Description>{description}</Description>
 
         <TechStack>

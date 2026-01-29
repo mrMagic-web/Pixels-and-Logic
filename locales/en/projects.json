@@ -8,8 +8,8 @@
       "description": "Modern web application for planning and managing team projects with advanced collaboration features.",
       "images": [
         {
-          "url": "/projects/plannero/analytics.jpg",
-          "alt": "Plannero - Reports & Analytics dashboard with delivery metrics and KPIs"
+          "url": "/projects/plannero.png",
+          "alt": "Plannero - Delivery Management Application"
         },
         {
           "url": "/projects/plannero/problem.jpg",
@@ -37,12 +37,12 @@
       "link": "https://plannero.online/"
     },
     {
-      "name": "LexHippica - Legal Services for Equestrian Sports and Horse Breeding",
+      "name": "LexHippica - Legal Services for Equestrian Sports",
       "description": "Website for a law firm specializing in equestrian law and animal protection.",
       "images": [
         {
-          "url": "/projects/lexhippica/homepage.jpg",
-          "alt": "LexHippica - Homepage with hero section featuring horses"
+          "url": "/projects/lexhippica.png",
+          "alt": "LexHippica - Legal Services Website"
         },
         {
           "url": "/projects/lexhippica/landing.jpg",
@@ -69,8 +69,8 @@
       "name": "Pattern Market: The Ultimate Pattern Marketplace",
       "description": "Pattern Market is a marketplace for design patterns, where users can buy, sell, and share crafting templates. It fosters a creative community with secure transactions, user profiles, and order management.",      "status": "Under Development",      "images": [
         {
-          "url": "/projects/patternmarket/home.jpg",
-          "alt": "Pattern Market - Homepage"
+          "url": "/projects/pattern-market.png",
+          "alt": "Pattern Market - Design Pattern Marketplace"
         }
       ],
       "technologies": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Firebase", "SCSS"],

@@ -3,8 +3,8 @@ import styled from '@emotion/styled';
 import { theme } from '../../../styles/theme';
 
 interface TechIconProps {
-    name: string;
-    icon: string;
+  name: string;
+  icon: string;
 }
 
 const IconWrapper = styled.div`
@@ -23,13 +23,10 @@ const IconWrapper = styled.div`
   }
 `;
 
-const Icon = styled.div`
-  font-size: 48px;
+const Icon = styled.img`
   width: 64px;
   height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: contain;
 `;
 
 const Name = styled.span`
@@ -40,10 +37,10 @@ const Name = styled.span`
 `;
 
 export const TechIcon: React.FC<TechIconProps> = ({ name, icon }) => {
-    return (
-        <IconWrapper>
-            <Icon>{icon}</Icon>
-            <Name>{name}</Name>
-        </IconWrapper>
-    );
+  return (
+    <IconWrapper>
+      <Icon src={icon} alt={name} />
+      <Name>{name}</Name>
+    </IconWrapper>
+  );
 };

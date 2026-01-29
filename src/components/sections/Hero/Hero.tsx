@@ -22,13 +22,14 @@ const HeroSection = styled(Section)`
 
 const HeroContainer = styled(Container)`
   position: relative;
+  margin-left: 0;
   z-index: 2;
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: ${theme.spacing[12]};
+  gap: ${theme.spacing[20]};
   
   @media (max-width: ${theme.breakpoints.lg}) {
     flex-direction: column;
@@ -37,14 +38,14 @@ const ContentWrapper = styled.div`
 `;
 
 export const Hero: React.FC = () => {
-    return (
-        <HeroSection>
-            <HeroBackground />
-            <HeroContainer>
-                <ContentWrapper>
-                    <HeroContent />
-                </ContentWrapper>
-            </HeroContainer>
-        </HeroSection>
-    );
+  return (
+    <HeroSection>
+      <HeroBackground />
+      <HeroContainer>
+        <ContentWrapper>
+          <HeroContent />
+        </ContentWrapper>
+      </HeroContainer>
+    </HeroSection>
+  );
 };

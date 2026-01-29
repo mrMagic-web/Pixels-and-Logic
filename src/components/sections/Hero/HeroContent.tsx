@@ -10,17 +10,28 @@ const Content = styled.div`
 `;
 
 const Headline = styled.h1`
-  font-size: ${theme.fontSizes['7xl']};
+  font-size: ${theme.fontSizes['5xl']};
   color: ${theme.colors.primary};
   margin-bottom: ${theme.spacing[6]};
-  line-height: 1.1;
+  line-height: 1.4;
+  max-width: 500px;
+  
+  span {
+    background-color: ${theme.colors.white};
+    padding: ${theme.spacing[1]} ${theme.spacing[4]};
+    border-radius: ${theme.borderRadius.md};
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
   
   @media (max-width: ${theme.breakpoints.lg}) {
     font-size: ${theme.fontSizes['5xl']};
+    max-width: 400px;
   }
   
   @media (max-width: ${theme.breakpoints.md}) {
     font-size: ${theme.fontSizes['4xl']};
+    max-width: 350px;
   }
 `;
 
@@ -29,6 +40,14 @@ const Subtitle = styled.p`
   color: ${theme.colors.textSecondary};
   margin-bottom: ${theme.spacing[8]};
   max-width: 600px;
+  
+  span {
+    background-color: ${theme.colors.white};
+    padding: ${theme.spacing[1]} ${theme.spacing[4]};
+    border-radius: ${theme.borderRadius.sm};
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
   
   @media (max-width: ${theme.breakpoints.md}) {
     font-size: ${theme.fontSizes.lg};
@@ -42,34 +61,34 @@ const ButtonGroup = styled.div`
 `;
 
 export const HeroContent: React.FC = () => {
-    const { t } = useTranslation('hero');
+  const { t } = useTranslation('hero');
 
-    const scrollToContact = () => {
-        const element = document.getElementById('contact');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  const scrollToContact = () => {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-    const scrollToServices = () => {
-        const element = document.getElementById('services');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
+  const scrollToServices = () => {
+    const element = document.getElementById('services');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
-    return (
-        <Content>
-            <Headline>{t('headline')}</Headline>
-            <Subtitle>{t('subtitle')}</Subtitle>
-            <ButtonGroup>
-                <Button size="lg" onClick={scrollToContact}>
-                    {t('cta.primary')}
-                </Button>
-                <Button size="lg" variant="outline" onClick={scrollToServices}>
-                    {t('cta.secondary')}
-                </Button>
-            </ButtonGroup>
-        </Content>
-    );
+  return (
+    <Content>
+      <Headline><span>{t('headline')}</span></Headline>
+      <Subtitle><span>{t('subtitle')}</span></Subtitle>
+      <ButtonGroup>
+        <Button size="lg" onClick={scrollToContact}>
+          {t('cta.primary')}
+        </Button>
+        <Button size="lg" variant="outline" onClick={scrollToServices}>
+          {t('cta.secondary')}
+        </Button>
+      </ButtonGroup>
+    </Content>
+  );
 };
