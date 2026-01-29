@@ -1,0 +1,21 @@
+{
+  "title": "Dlaczego my",
+  "reasons": [
+    {
+      "title": "14 lat doświadczenia",
+      "description": "Sprawdzona ekspertyza"
+    },
+    {
+      "title": "Doświadczenie enterprise",
+      "description": "Duże, złożone projekty"
+    },
+    {
+      "title": "Podejście produktowe",
+      "description": "Skupienie na wartości biznesowej"
+    },
+    {
+      "title": "Mały zespół = szybkie decyzje",
+      "description": "Zwinność i responsywność"
+    }
+  ]
+}

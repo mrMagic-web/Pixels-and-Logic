@@ -1,0 +1,21 @@
+{
+  "title": "Why Us",
+  "reasons": [
+    {
+      "title": "14 years of experience",
+      "description": "Battle-tested expertise"
+    },
+    {
+      "title": "Enterprise experience",
+      "description": "Large-scale solutions"
+    },
+    {
+      "title": "Product approach",
+      "description": "Focus on business value"
+    },
+    {
+      "title": "Small team = fast decisions",
+      "description": "Agile and responsive"
+    }
+  ]
+}

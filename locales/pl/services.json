@@ -1,0 +1,20 @@
+{
+  "title": "Co robimy",
+  "cards": [
+    {
+      "title": "Budowa aplikacji webowych",
+      "description": "Kompleksowe rozwiązania — analiza, UI/UX, backend, frontend, bazy danych i wdrożenie.",
+      "cta": "Dowiedz się więcej"
+    },
+    {
+      "title": "Integracje i modernizacja systemów",
+      "description": "Integracje API, migracje danych, refaktoryzacja legacy, optymalizacja działania.",
+      "cta": "Dowiedz się więcej"
+    },
+    {
+      "title": "Body leasing zespołu IT",
+      "description": "Senior/Lead + mid + junior. Wsparcie projektów i elastyczne kontrakty.",
+      "cta": "Dowiedz się więcej"
+    }
+  ]
+}

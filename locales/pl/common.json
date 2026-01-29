@@ -1,0 +1,13 @@
+{
+  "siteName": "Pixel & Logic",
+  "navigation": {
+    "services": "Oferta",
+    "whyUs": "Dlaczego my",
+    "technologies": "Technologie",
+    "contact": "Kontakt"
+  },
+  "footer": {
+    "copyright": "© 2026 Pixel & Logic. Wszelkie prawa zastrzeżone.",
+    "tagline": "Budujemy nowoczesne aplikacje internetowe"
+  }
+}

@@ -1,0 +1,105 @@
+import React, { useState, useEffect } from 'react';
+import styled from '@emotion/styled';
+import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+import { theme } from '../../styles/theme';
+import { Container } from '../ui/Container';
+import { LanguageToggle } from '../ui/LanguageToggle';
+
+const HeaderWrapper = styled.header<{ isScrolled: boolean }>`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: ${theme.zIndex.sticky};
+  background-color: ${({ isScrolled }) =>
+        isScrolled ? theme.colors.white : 'transparent'};
+  box-shadow: ${({ isScrolled }) =>
+        isScrolled ? theme.shadows.md : 'none'};
+  transition: ${theme.transitions.base};
+  padding: ${theme.spacing[4]} 0;
+`;
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const Logo = styled(Link)`
+  font-family: ${theme.fonts.heading};
+  font-size: ${theme.fontSizes['2xl']};
+  font-weight: ${theme.fontWeights.bold};
+  color: ${theme.colors.primary};
+  text-decoration: none;
+`;
+
+const NavLinks = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing[8]};
+  
+  @media (max-width: ${theme.breakpoints.md}) {
+    gap: ${theme.spacing[4]};
+  }
+`;
+
+const NavLink = styled.a`
+  color: ${theme.colors.textSecondary};
+  font-weight: ${theme.fontWeights.medium};
+  transition: ${theme.transitions.base};
+  
+  &:hover {
+    color: ${theme.colors.primary};
+  }
+  
+  @media (max-width: ${theme.breakpoints.sm}) {
+    font-size: ${theme.fontSizes.sm};
+  }
+`;
+
+export const Header: React.FC = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+    const { t } = useTranslation('common');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 50);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToSection = (id: string) => (e: React.MouseEvent) => {
+        e.preventDefault();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+    return (
+        <HeaderWrapper isScrolled={isScrolled}>
+            <Container>
+                <Nav>
+                    <Logo to="/">{t('siteName')}</Logo>
+                    <NavLinks>
+                        <NavLink href="#services" onClick={scrollToSection('services')}>
+                            {t('navigation.services')}
+                        </NavLink>
+                        <NavLink href="#why-us" onClick={scrollToSection('why-us')}>
+                            {t('navigation.whyUs')}
+                        </NavLink>
+                        <NavLink href="#technologies" onClick={scrollToSection('technologies')}>
+                            {t('navigation.technologies')}
+                        </NavLink>
+                        <NavLink href="#contact" onClick={scrollToSection('contact')}>
+                            {t('navigation.contact')}
+                        </NavLink>
+                        <LanguageToggle />
+                    </NavLinks>
+                </Nav>
+            </Container>
+        </HeaderWrapper>
+    );
+};

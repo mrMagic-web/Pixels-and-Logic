@@ -1,0 +1,20 @@
+{
+  "title": "What We Do",
+  "cards": [
+    {
+      "title": "Web Application Development",
+      "description": "Comprehensive solutions — analysis, UI/UX, backend, frontend, databases and deployment.",
+      "cta": "Learn more"
+    },
+    {
+      "title": "Integrations & System Modernization",
+      "description": "API integrations, data migrations, legacy refactoring, performance optimization.",
+      "cta": "Learn more"
+    },
+    {
+      "title": "IT Team Leasing",
+      "description": "Senior/Lead + mid + junior. Project support and flexible contracts.",
+      "cta": "Learn more"
+    }
+  ]
+}

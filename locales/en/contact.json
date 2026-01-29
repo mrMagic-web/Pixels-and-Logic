@@ -1,0 +1,19 @@
+{
+  "title": "Get in Touch",
+  "subtitle": "Let's discuss your project",
+  "info": {
+    "email": "hello@pixellogic.com",
+    "phone": "+48 XXX XXX XXX"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "submit": "Schedule a short call",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Tell us about your project...",
+    "success": "Thank you! We'll get back to you soon.",
+    "error": "Something went wrong. Please try again."
+  }
+}
