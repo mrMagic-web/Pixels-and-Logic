@@ -4,6 +4,7 @@ import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
 import { theme } from '../../styles/theme';
 import { Container } from '../ui/Container';
 import { LanguageToggle } from '../ui/LanguageToggle';
+import { Button } from '../ui/Button';
 
 const HeaderWrapper = styled.header<{ isScrolled: boolean }>`
   position: fixed;
@@ -105,6 +106,9 @@ export const Header: React.FC = () => {
                         <NavLink href="#contact" onClick={scrollToSection('contact')}>
                             {t('navigation.contact')}
                         </NavLink>
+                        <Button as="a" href="#mvp-packages" onClick={scrollToSection('mvp-packages')} size="sm">
+                            {t('navigation.mvp')}
+                        </Button>
                         <LanguageToggle />
                     </NavLinks>
                 </Nav>
