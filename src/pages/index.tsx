@@ -4,6 +4,8 @@ import { graphql } from 'gatsby';
 import { Layout } from '../components/layout/Layout';
 import { Hero } from '../components/sections/Hero/Hero';
 import { Services } from '../components/sections/Services/Services';
+import { MVPPackages } from '../components/sections/MVPPackages/MVPPackages';
+import { Projects } from '../components/sections/Projects/Projects';
 import { WhyUs } from '../components/sections/WhyUs/WhyUs';
 import { Technologies } from '../components/sections/Technologies/Technologies';
 import { Contact } from '../components/sections/Contact/Contact';
@@ -13,6 +15,8 @@ const IndexPage: React.FC<PageProps> = () => {
     <Layout>
       <Hero />
       <Services />
+      <MVPPackages />
+      <Projects />
       <WhyUs />
       <Technologies />
       <Contact />

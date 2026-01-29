@@ -4,14 +4,14 @@ export const theme = {
     mustard: '#085454',     // Dark teal/mustard
     navy: '#7A7A7A',        // Medium gray
     teal: '#C7FFED',        // Light mint/teal
-    white: '#F2E7DC',       // Cream/off-white background
-    yellow: '#FFB30D',      // Bright yellow accent
+    white: '#DEEFE7',       // Light mint background
+    yellow: '#38b6ff',      // Bright blue accent
     
     // Semantic colors for easier usage
     primary: '#001542',     // Blue
-    accent: '#FFB30D',      // Yellow
+    accent: '#38b6ff',      // Blue accent
     accentAlt: '#085454',   // Mustard/dark teal
-    background: '#F2E7DC',  // White/cream
+    background: '#DEEFE7',  // Light mint background
     backgroundAlt: '#C7FFED', // Teal light
     text: '#001542',        // Blue for headings
     textSecondary: '#7A7A7A', // Navy/gray for body

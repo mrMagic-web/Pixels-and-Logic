@@ -30,7 +30,7 @@ export const Contact: React.FC = () => {
     const { t } = useTranslation('contact');
 
     return (
-        <Section id="contact" backgroundColor={theme.colors.background}>
+        <Section id="contact" backgroundColor="#C7FFED">
             <Container>
                 <SectionHeading
                     title={t('title')}

@@ -32,7 +32,7 @@ export const WhyUs: React.FC = () => {
     }>;
 
     return (
-        <Section id="why-us" backgroundColor={theme.colors.backgroundAlt}>
+        <Section id="why-us" backgroundColor="#C7FFED">
             <Container>
                 <SectionHeading title={t('title')} />
                 <ReasonsGrid>

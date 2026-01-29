@@ -34,7 +34,7 @@ export const Services: React.FC = () => {
     }>;
 
     return (
-        <Section id="services" backgroundColor={theme.colors.background}>
+        <Section id="services" backgroundColor="#C7FFED">
             <Container>
                 <SectionHeading title={t('title')} />
                 <ServicesGrid>

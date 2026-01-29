@@ -1,0 +1,86 @@
+{
+  "title": "Selected Projects",
+  "subtitle": "Real results from real clients - see how we helped companies build and scale their applications.",
+  "cta": "View Project",
+  "projects": [
+    {
+      "name": "LexHippica - Legal Services for Equestrian Sports and Horse Breeding",
+      "description": "Website for a law firm specializing in equestrian law and animal protection.",
+      "images": [
+        {
+          "url": "/projects/lexhippica/homepage.jpg",
+          "alt": "LexHippica - Homepage with hero section featuring horses"
+        },
+        {
+          "url": "/projects/lexhippica/landing.jpg",
+          "alt": "LexHippica - Landing page with beautiful landscape and horses"
+        },
+        {
+          "url": "/projects/lexhippica/blog.jpg",
+          "alt": "LexHippica - Blog section with legal articles"
+        },
+        {
+          "url": "/projects/lexhippica/contact.jpg",
+          "alt": "LexHippica - Contact page with contact form"
+        }
+      ],
+      "technologies": ["WordPress", "SCSS", "HTML", "PHP"],
+      "testimonial": {
+        "text": "The implementation of the LexHippica project was an example of collaboration at the highest level. From the initial consultations to the final deployment, the entire process was characterized by timeliness and a full understanding of our needs as a client. The website was prepared in a functional manner and consistent with the nature of our business. Particular recognition deserves the responsiveness and openness to all questions or suggestions — every request was implemented quickly and with full commitment and professionalism. I recommend working with Maciej without hesitation.",
+        "author": "Agnieszka Kalinowska",
+        "position": "Attorney at Law, LexHippica"
+      },
+      "link": "https://lexhippica.pl/"
+    },
+    {
+      "name": "Plannero - Simplify Delivery Management & Save Time",
+      "description": "Modern web application for planning and managing team projects with advanced collaboration features.",
+      "images": [
+        {
+          "url": "/projects/plannero/analytics.jpg",
+          "alt": "Plannero - Reports & Analytics dashboard with delivery metrics and KPIs"
+        },
+        {
+          "url": "/projects/plannero/problem.jpg",
+          "alt": "Plannero - The Problem section showing Excel-based workflow issues"
+        },
+        {
+          "url": "/projects/plannero/catalog.jpg",
+          "alt": "Plannero - Product delivery businesses main catalog and management interface"
+        },
+        {
+          "url": "/projects/plannero/advanced.jpg",
+          "alt": "Plannero - Reports & Analytics dashboard with advanced metrics"
+        },
+        {
+          "url": "/projects/plannero/reports.jpg",
+          "alt": "Plannero - Comprehensive delivery tracking and reporting system"
+        }
+      ],
+      "technologies": [ "React", "Stripe", "Tailwind CSS", "TypeScript", "Python", "Django"],
+      "testimonial": {
+        "text": "[PLACEHOLDER - Add real client testimonial about the Plannero project here]",
+        "author": "",
+        "position": ""
+      },
+      "link": "https://plannero.online/"
+    },
+    {
+      "name": "Pattern Market: The Ultimate Pattern Marketplace",
+      "description": "Pattern Market is a marketplace for design patterns, where users can buy, sell, and share crafting templates. It fosters a creative community with secure transactions, user profiles, and order management.",
+      "images": [
+        {
+          "url": "/projects/patternmarket/home.jpg",
+          "alt": "Pattern Market - Homepage"
+        }
+      ],
+      "technologies": ["React", "TypeScript", "Node.js", "Express", "MongoDB", "Firebase", "SCSS"],
+      "testimonial": {
+        "text": "",
+        "author": "",
+        "position": ""
+      },
+      "link": "https://pattern-market.vercel.app/"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "title": "Wybierz pakiet MVP",
+  "subtitle": "Trzy pakiety zaprojektowane dla różnych zakresów projektów i budżetów.",
+  "packages": [
+    {
+      "badge": "Najtańszy",
+      "name": "Starter MVP",
+      "description": "Idealny do walidacji prostego pomysłu",
+      "price": "9 900 zł",
+      "priceNote": "netto",
+      "duration": "5 dni roboczych",
+      "pages": "3-5 stron",
+      "cta": "Wybierz pakiet",
+      "features": [
+        "Strona landingowa + 2-4 dodatkowe strony",
+        "Formularz kontaktowy z integracją email",
+        "Prosta autentyfikacja użytkownika (login/rejestracja)",
+        "Podstawowy panel admina (zarządzanie użytkownikami, edycja treści)",
+        "Responsywny design (mobile + desktop)",
+        "Wdrożenie produkcyjne na instancji Vercel klienta",
+        "Przekazanie kodu źródłowego",
+        "5 dni roboczych od uruchomienia projektu",
+        "Codzienne aktualizacje postępu",
+        "100% gwarancja zwrotu pieniędzy"
+      ]
+    },
+    {
+      "badge": "Najpopularniejszy",
+      "name": "Professional MVP",
+      "description": "Pełne MVP z zaawansowaną funkcjonalnością",
+      "price": "19 800 zł",
+      "priceNote": "netto",
+      "duration": "12 dni roboczych",
+      "pages": "8-12 stron",
+      "cta": "Wybierz pakiet",
+      "features": [
+        "Kompletna aplikacja webowa (8-12 stron)",
+        "Zaawansowana autentyfikacja i autoryzacja użytkowników",
+        "Pełny panel administracyjny z analityką",
+        "2-3 kluczowe funkcje biznesowe w pełni zaimplementowane",
+        "Projekt bazy danych i rozwój API",
+        "Integracja płatności (Stripe)",
+        "Integracja serwisu email (SendGrid/Mailgun)",
+        "Przesyłanie plików i zarządzanie mediami",
+        "System ról i uprawnień użytkowników",
+        "Wdrożenie produkcyjne na instancji Vercel klienta",
+        "Optymalizacja wydajności",
+        "Kod źródłowy z dokumentacją",
+        "12 dni roboczych od uruchomienia projektu",
+        "Codzienne aktualizacje i cotygodniowe demo",
+        "100% gwarancja zwrotu pieniędzy"
+      ]
+    },
+    {
+      "badge": "Dla przedsiębiorstw",
+      "name": "Custom MVP",
+      "description": "Rozwiązanie szyte na miarę dla złożonych projektów",
+      "price": "Skontaktuj się",
+      "priceNote": "",
+      "duration": "Elastyczny termin",
+      "pages": "Wg wymagań",
+      "cta": "Wybierz pakiet",
+      "features": [
+        "Zakres customowy na podstawie Twoich specyfikacji",
+        "Zaawansowane integracje i API",
+        "Implementacja złożonej logiki biznesowej",
+        "Wielopoziomowe zarządzanie użytkownikami",
+        "Zaawansowana analityka i raportowanie",
+        "Integracje z usługami trzecimi",
+        "Strategia wdrożenia customowa",
+        "Rozszerzone testowanie i QA",
+        "Konfiguracja monitorowania wydajności",
+        "Szkolenie zespołu i przekazanie wiedzy",
+        "Opcje wsparcia ciągłego",
+        "Elastyczny termin wg złożoności projektu",
+        "Gwarancja satysfakcji – jeśli nie dostarczymy, nie płacisz"
+      ]
+    }
+  ],
+  "includedLabel": "W cenie:"
+}

@@ -1,0 +1,81 @@
+{
+  "title": "Choose Your MVP Package",
+  "subtitle": "Three packages designed for different project scopes and budgets.",
+  "packages": [
+    {
+      "badge": "Most Affordable",
+      "name": "Starter MVP",
+      "description": "Perfect for validating a simple idea",
+      "price": "9,900 PLN",
+      "priceNote": "net",
+      "duration": "5 business days",
+      "pages": "3-5 pages",
+      "cta": "Choose Package",
+      "features": [
+        "Landing page + 2-4 additional pages",
+        "Contact form with email integration",
+        "Simple user authentication (login/registration)",
+        "Basic admin panel (user management, content editing)",
+        "Responsive design (mobile + desktop)",
+        "Production deployment on client's Vercel instance",
+        "Source code handover",
+        "5 business days from project kickoff",
+        "Daily progress updates",
+        "100% money-back guarantee"
+      ]
+    },
+    {
+      "badge": "Most Popular",
+      "name": "Professional MVP",
+      "description": "Full MVP with advanced functionality",
+      "price": "19,800 PLN",
+      "priceNote": "net",
+      "duration": "12 business days",
+      "pages": "8-12 pages",
+      "cta": "Choose Package",
+      "features": [
+        "Complete web application (8-12 pages)",
+        "Advanced user authentication and authorization",
+        "Full admin panel with analytics",
+        "2-3 key business features fully implemented",
+        "Database design and API development",
+        "Payment integration (Stripe)",
+        "Email service integration (SendGrid/Mailgun)",
+        "File upload and media management",
+        "User roles and permissions system",
+        "Production deployment on client's Vercel instance",
+        "Performance optimization",
+        "Source code with documentation",
+        "12 business days from project kickoff",
+        "Daily updates and weekly demos",
+        "100% money-back guarantee"
+      ]
+    },
+    {
+      "badge": "For Enterprise",
+      "name": "Custom MVP",
+      "description": "Tailored solution for complex projects",
+      "price": "Contact Us",
+      "priceNote": "",
+      "duration": "Flexible timeline",
+      "pages": "Per requirements",
+      "cta": "Choose Package",
+      "features": [
+        "Custom scope based on your specifications",
+        "Advanced integrations and APIs",
+        "Complex business logic implementation",
+        "Multi-level user management",
+        "Advanced analytics and reporting",
+        "Third-party service integrations",
+        "Custom deployment strategy",
+        "Extended testing and QA",
+        "Performance monitoring setup",
+        "Team training and knowledge transfer",
+        "Ongoing support options",
+        "Flexible timeline based on project complexity",
+        "Satisfaction guarantee - if we don't deliver, you don't pay"
+      ]
+    }
+  ],
+  "includedLabel": "Included:"
+}
