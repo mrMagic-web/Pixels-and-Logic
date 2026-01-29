@@ -56,7 +56,7 @@ const config: GatsbyConfig = {
         localeJsonSourceName: 'locale',
         languages: ['en', 'pl'],
         defaultLanguage: 'en',
-        siteUrl: 'https://www.pixellogic.com',
+        siteUrl: 'https://pixelsandlogic.eu/',
         generateDefaultLanguagePage: true,
         redirect: false,
         i18nextOptions: {
