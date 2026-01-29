@@ -1,5 +1,5 @@
 {
-  "siteName": "Pixel & Logic",
+  "siteName": "Pixels & Logic",
   "navigation": {
     "services": "Services",
     "whyUs": "Why Us",
@@ -7,7 +7,7 @@
     "contact": "Contact"
   },
   "footer": {
-    "copyright": "© 2026 Pixel & Logic. All rights reserved.",
+    "copyright": "© 2026 Pixels & Logic. All rights reserved.",
     "tagline": "Building modern web applications"
   }
 }

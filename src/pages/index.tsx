@@ -24,7 +24,7 @@ export default IndexPage;
 
 export const Head: HeadFC = () => (
   <>
-    <title>Pixel & Logic - Building Modern Web Applications</title>
+    <title>Pixels & Logic - Building Modern Web Applications</title>
     <meta name="description" content="Software house specializing in web applications, system integrations, and IT team leasing. 14 years of enterprise experience." />
   </>
 );

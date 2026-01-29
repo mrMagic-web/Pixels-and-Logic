@@ -1,4 +1,4 @@
-# Pixel & Logic Website
+# Pixels & Logic Website
 
 Modern, bilingual one-page website for a digital agency built with Gatsby, React, TypeScript, and Emotion CSS.
 
@@ -163,4 +163,4 @@ Private project - All rights reserved.
 
 ## 👥 Contact
 
-For questions or support, contact: hello@pixellogic.com
+For questions or support, contact: contact@pixelsandlogic.eu

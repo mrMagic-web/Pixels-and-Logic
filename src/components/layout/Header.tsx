@@ -16,7 +16,7 @@ const HeaderWrapper = styled.header<{ isScrolled: boolean }>`
   box-shadow: ${({ isScrolled }) =>
         isScrolled ? theme.shadows.md : 'none'};
   transition: ${theme.transitions.base};
-  padding: ${theme.spacing[4]} 0;
+  padding: ${theme.spacing[2]} 0;
 `;
 
 const Nav = styled.nav`
@@ -25,12 +25,19 @@ const Nav = styled.nav`
   align-items: center;
 `;
 
-const Logo = styled(Link)`
-  font-family: ${theme.fonts.heading};
-  font-size: ${theme.fontSizes['2xl']};
-  font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.primary};
+const LogoLink = styled(Link)`
+  display: flex;
+  align-items: center;
   text-decoration: none;
+`;
+
+const LogoImage = styled.img`
+  height: 52px;
+  width: auto;
+  
+  @media (max-width: ${theme.breakpoints.sm}) {
+    height: 42px;
+  }
 `;
 
 const NavLinks = styled.div`
@@ -82,7 +89,9 @@ export const Header: React.FC = () => {
         <HeaderWrapper isScrolled={isScrolled}>
             <Container>
                 <Nav>
-                    <Logo to="/">{t('siteName')}</Logo>
+                    <LogoLink to="/">
+                        <LogoImage src="/logo/logo-light.png" alt={t('siteName')} />
+                    </LogoLink>
                     <NavLinks>
                         <NavLink href="#services" onClick={scrollToSection('services')}>
                             {t('navigation.services')}

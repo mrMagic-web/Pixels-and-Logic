@@ -61,4 +61,4 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>404 - Page Not Found | Pixel & Logic</title>;
+export const Head: HeadFC = () => <title>404 - Page Not Found | Pixels & Logic</title>;

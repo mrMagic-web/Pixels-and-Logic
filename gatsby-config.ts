@@ -2,7 +2,7 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Pixel & Logic`,
+    title: `Pixels & Logic`,
     description: `Modern software house specializing in web applications, system integrations, and IT team leasing`,
     siteUrl: `https://www.pixellogic.com`
   },
@@ -14,13 +14,13 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Pixel & Logic",
+        name: "Pixels & Logic",
         short_name: "P&L",
         start_url: "/",
         background_color: "#F2E7DC",
         theme_color: "#001542",
         display: "minimal-ui",
-        icon: "src/images/icon.png"
+        icon: "public/logo/Pandl_Logo_mini_light.png"
       }
     },
     "gatsby-transformer-remark",
@@ -57,19 +57,15 @@ const config: GatsbyConfig = {
         languages: ['en', 'pl'],
         defaultLanguage: 'en',
         siteUrl: 'https://www.pixellogic.com',
+        generateDefaultLanguagePage: true,
+        redirect: false,
         i18nextOptions: {
           interpolation: {
             escapeValue: false
           },
-          keySeparator: false,
+          keySeparator: '.',
           nsSeparator: false
-        },
-        pages: [
-          {
-            matchPath: '/:lang?',
-            getLanguageFromPath: true
-          }
-        ]
+        }
       }
     }
   ]

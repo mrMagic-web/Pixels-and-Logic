@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
+import { useForm, ValidationError } from '@formspree/react';
 import { theme } from '../../../styles/theme';
 import { Button } from '../../ui/Button';
 
@@ -76,37 +77,23 @@ const Message = styled.div<{ type: 'success' | 'error' }>`
   text-align: center;
 `;
 
+const ErrorText = styled.span`
+  color: #c62828;
+  font-size: ${theme.fontSizes.sm};
+  margin-top: ${theme.spacing[1]};
+`;
+
 export const ContactForm: React.FC = () => {
     const { t } = useTranslation('contact');
-    const [formState, setFormState] = useState({
-        name: '',
-        email: '',
-        message: ''
-    });
-    const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [state, handleSubmit] = useForm("xdazeego");
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-
-        // Simple form handling - in production, connect to Formspree or backend
-        try {
-            // Simulate API call
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            setStatus('success');
-            setFormState({ name: '', email: '', message: '' });
-        } catch (error) {
-            setStatus('error');
-        }
-    };
-
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-    ) => {
-        setFormState({
-            ...formState,
-            [e.target.name]: e.target.value
-        });
-    };
+    if (state.succeeded) {
+        return (
+            <FormWrapper as="div">
+                <Message type="success">{t('form.success')}</Message>
+            </FormWrapper>
+        );
+    }
 
     return (
         <FormWrapper onSubmit={handleSubmit}>
@@ -116,10 +103,14 @@ export const ContactForm: React.FC = () => {
                     type="text"
                     id="name"
                     name="name"
-                    value={formState.name}
-                    onChange={handleChange}
                     placeholder={t('form.namePlaceholder')}
                     required
+                />
+                <ValidationError 
+                    prefix={t('form.name')} 
+                    field="name"
+                    errors={state.errors}
+                    as={ErrorText}
                 />
             </FormGroup>
 
@@ -129,10 +120,14 @@ export const ContactForm: React.FC = () => {
                     type="email"
                     id="email"
                     name="email"
-                    value={formState.email}
-                    onChange={handleChange}
                     placeholder={t('form.emailPlaceholder')}
                     required
+                />
+                <ValidationError 
+                    prefix={t('form.email')} 
+                    field="email"
+                    errors={state.errors}
+                    as={ErrorText}
                 />
             </FormGroup>
 
@@ -141,22 +136,22 @@ export const ContactForm: React.FC = () => {
                 <TextArea
                     id="message"
                     name="message"
-                    value={formState.message}
-                    onChange={handleChange}
                     placeholder={t('form.messagePlaceholder')}
                     required
                 />
+                <ValidationError 
+                    prefix={t('form.message')} 
+                    field="message"
+                    errors={state.errors}
+                    as={ErrorText}
+                />
             </FormGroup>
 
-            <Button type="submit" size="lg" fullWidth>
-                {t('form.submit')}
+            <Button type="submit" size="lg" fullWidth disabled={state.submitting}>
+                {state.submitting ? t('form.sending') : t('form.submit')}
             </Button>
 
-            {status === 'success' && (
-                <Message type="success">{t('form.success')}</Message>
-            )}
-
-            {status === 'error' && (
+            {state.errors && state.errors.length > 0 && !state.succeeded && (
                 <Message type="error">{t('form.error')}</Message>
             )}
         </FormWrapper>

@@ -209,7 +209,7 @@ export const Button: React.FC<ButtonProps> = ({
 </nav>
 
 // ✅ Alt text for images
-<img src="logo.png" alt="Pixel & Logic Logo" />
+<img src="logo.png" alt="Pixels & Logic Logo" />
 
 // ✅ Form labels
 <label htmlFor="email">Email</label>
@@ -245,7 +245,7 @@ const onClick = useCallback(() => handleClick(id), [id]);
 1. **Hardcoding Text**
    ```tsx
    // ❌ Bad
-   <h1>Welcome to Pixel & Logic</h1>
+   <h1>Welcome to Pixels & Logic</h1>
    
    // ✅ Good
    <h1>{t('hero.headline')}</h1>

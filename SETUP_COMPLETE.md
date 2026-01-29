@@ -1,6 +1,6 @@
 # ✅ Project Setup Complete!
 
-## 🎉 Pixel & Logic Website - Ready to Use
+## 🎉 Pixels & Logic Website - Ready to Use
 
 Your Gatsby website project has been successfully created and is running!
 
@@ -191,8 +191,8 @@ Update in translation files:
 - Phone: `locales/*/contact.json` → `info.phone`
 
 Currently set to:
-- Email: hello@pixellogic.com
-- Phone: +48 XXX XXX XXX
+- Email: contact@pixelsandlogic.eu
+- Phone: +48 511 322 292
 
 ### 🌐 Deployment to Render
 
