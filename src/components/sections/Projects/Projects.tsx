@@ -42,6 +42,7 @@ export const Projects: React.FC = () => {
             position: string;
         };
         link: string;
+        status?: string;
     }>;
 
     return (
@@ -61,6 +62,7 @@ export const Projects: React.FC = () => {
                             testimonial={project.testimonial}
                             link={project.link}
                             cta={t('cta')}
+                            status={project.status}
                         />
                     ))}
                 </ProjectsGrid>

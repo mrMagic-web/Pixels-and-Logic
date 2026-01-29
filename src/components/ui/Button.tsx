@@ -3,11 +3,11 @@ import styled from '@emotion/styled';
 import { theme } from '../../styles/theme';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    variant?: 'primary' | 'secondary' | 'outline';
-    size?: 'sm' | 'md' | 'lg';
-    fullWidth?: boolean;
-    as?: 'button' | 'a';
-    href?: string;
+  variant?: 'primary' | 'secondary' | 'outline';
+  size?: 'sm' | 'md' | 'lg';
+  fullWidth?: boolean;
+  as?: 'button' | 'a';
+  href?: string;
 }
 
 const StyledButton = styled.button<ButtonProps>`
@@ -24,29 +24,29 @@ const StyledButton = styled.button<ButtonProps>`
   white-space: nowrap;
   
   ${({ size }) => {
-        switch (size) {
-            case 'sm':
-                return `
-          padding: ${theme.spacing[2]} ${theme.spacing[4]};
+    switch (size) {
+      case 'sm':
+        return `
+          padding: 6px ${theme.spacing[4]};
           font-size: ${theme.fontSizes.sm};
         `;
-            case 'lg':
-                return `
-          padding: ${theme.spacing[4]} ${theme.spacing[8]};
+      case 'lg':
+        return `
+          padding: 12px ${theme.spacing[8]};
           font-size: ${theme.fontSizes.lg};
         `;
-            default:
-                return `
-          padding: ${theme.spacing[3]} ${theme.spacing[6]};
+      default:
+        return `
+          padding: 10px ${theme.spacing[6]};
           font-size: ${theme.fontSizes.base};
         `;
-        }
-    }}
+    }
+  }}
   
   ${({ variant }) => {
-        switch (variant) {
-            case 'secondary':
-                return `
+    switch (variant) {
+      case 'secondary':
+        return `
           background-color: ${theme.colors.accentAlt};
           color: ${theme.colors.white};
           
@@ -56,8 +56,8 @@ const StyledButton = styled.button<ButtonProps>`
             box-shadow: ${theme.shadows.lg};
           }
         `;
-            case 'outline':
-                return `
+      case 'outline':
+        return `
           background-color: transparent;
           color: ${theme.colors.primary};
           border-color: ${theme.colors.primary};
@@ -68,8 +68,8 @@ const StyledButton = styled.button<ButtonProps>`
             transform: translateY(-2px);
           }
         `;
-            default:
-                return `
+      default:
+        return `
           background-color: ${theme.colors.accent};
           color: ${theme.colors.primary};
           
@@ -79,8 +79,8 @@ const StyledButton = styled.button<ButtonProps>`
             box-shadow: ${theme.shadows.lg};
           }
         `;
-        }
-    }}
+    }
+  }}
   
   ${({ fullWidth }) => fullWidth && `width: 100%;`}
   
@@ -95,14 +95,14 @@ const StyledButton = styled.button<ButtonProps>`
 `;
 
 export const Button: React.FC<ButtonProps> = ({
-    variant = 'primary',
-    size = 'md',
-    children,
-    ...props
+  variant = 'primary',
+  size = 'md',
+  children,
+  ...props
 }) => {
-    return (
-        <StyledButton variant={variant} size={size} {...props}>
-            {children}
-        </StyledButton>
-    );
+  return (
+    <StyledButton variant={variant} size={size} {...props}>
+      {children}
+    </StyledButton>
+  );
 };

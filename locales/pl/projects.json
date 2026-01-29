@@ -4,35 +4,6 @@
   "cta": "Zobacz projekt",
   "projects": [
     {
-      "name": "LexHippica - Usługi prawne dla świata sportu i hodowli koni",
-      "description": "Strona internetowa dla kancelarii prawnej specjalizującej się w prawie jeździeckim i ochronie zwierząt.",
-      "images": [
-        {
-          "url": "/projects/lexhippica/homepage.jpg",
-          "alt": "LexHippica - Homepage with hero section featuring horses"
-        },
-        {
-          "url": "/projects/lexhippica/landing.jpg",
-          "alt": "LexHippica - Landing page with beautiful landscape and horses"
-        },
-        {
-          "url": "/projects/lexhippica/blog.jpg",
-          "alt": "LexHippica - Blog section with legal articles"
-        },
-        {
-          "url": "/projects/lexhippica/contact.jpg",
-          "alt": "LexHippica - Contact page with contact form"
-        }
-      ],
-      "technologies": ["WordPress", "SCSS", "HTML", "PHP"],
-      "testimonial": {
-        "text": "Realizacja projektu LexHippica była przykładem współpracy na najwyższym poziomie. Od pierwszych konsultacji aż po finalne wdrożenie, cały proces cechowały terminowość oraz pełne zrozumienie naszych potrzeb jako klienta. Strona została przygotowana w sposób funkcjonalny i spójny z charakterem naszej działalności. Na szczególne wyróżnienie zasługuje responsywność i otwartość na wszelkie pytania czy sugestie — każda prośba była realizowana szybko i z pełnym zaangażowaniem oraz profesjonalizmem. Bez wahania rekomenduję współpracę z Maćkiem.",
-        "author": "r. pr. Agnieszka Kalinowska",
-        "position": "Radca Prawny, LexHippica"
-      },
-      "link": "https://lexhippica.pl/"
-    },
-    {
       "name": "Plannero - Uprość zarządzanie dostawami i zaoszczędź czas",
       "description": "Nowoczesna aplikacja webowa do planowania i zarządzania projektami zespołowymi z zaawansowanymi funkcjonalnościami współpracy.",
       "images": [
@@ -66,9 +37,37 @@
       "link": "https://plannero.online/"
     },
     {
-      "name": "Pattern Market: The Ultimate Pattern Marketplace",
-      "description": "Pattern Market to rynek wzorów, gdzie użytkownicy mogą kupować, sprzedawać i dzielić się szablonami rzemieślniczymi. Wspiera kreatywną społeczność z bezpiecznymi transakcjami, profilami użytkowników i zarządzaniem zamówieniami.",
+      "name": "LexHippica - Usługi prawne dla świata sportu i hodowli koni",
+      "description": "Strona internetowa dla kancelarii prawnej specjalizującej się w prawie jeździeckim i ochronie zwierząt.",
       "images": [
+        {
+          "url": "/projects/lexhippica/homepage.jpg",
+          "alt": "LexHippica - Homepage with hero section featuring horses"
+        },
+        {
+          "url": "/projects/lexhippica/landing.jpg",
+          "alt": "LexHippica - Landing page with beautiful landscape and horses"
+        },
+        {
+          "url": "/projects/lexhippica/blog.jpg",
+          "alt": "LexHippica - Blog section with legal articles"
+        },
+        {
+          "url": "/projects/lexhippica/contact.jpg",
+          "alt": "LexHippica - Contact page with contact form"
+        }
+      ],
+      "technologies": ["WordPress", "SCSS", "HTML", "PHP"],
+      "testimonial": {
+        "text": "Realizacja projektu LexHippica była przykładem współpracy na najwyższym poziomie. Od pierwszych konsultacji aż po finalne wdrożenie, cały proces cechowały terminowość oraz pełne zrozumienie naszych potrzeb jako klienta. Strona została przygotowana w sposób funkcjonalny i spójny z charakterem naszej działalności. Na szczególne wyróżnienie zasługuje responsywność i otwartość na wszelkie pytania czy sugestie — każda prośba była realizowana szybko i z pełnym zaangażowaniem oraz profesjonalizmem. Bez wahania rekomenduję współpracę z Maćkiem.",
+        "author": "r. pr. Agnieszka Kalinowska",
+        "position": "Radca Prawny, LexHippica"
+      },
+      "link": "https://lexhippica.pl/"
+    },
+    {
+      "name": "Pattern Market: The Ultimate Pattern Marketplace",
+      "description": "Pattern Market to rynek wzorów, gdzie użytkownicy mogą kupować, sprzedawać i dzielić się szablonami rzemieślniczymi. Wspiera kreatywną społeczność z bezpiecznymi transakcjami, profilami użytkowników i zarządzaniem zamówieniami.",      "status": "W trakcie rozwoju",      "images": [
         {
           "url": "/projects/patternmarket/home.jpg",
           "alt": "Pattern Market - Strona główna"

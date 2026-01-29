@@ -11,10 +11,24 @@ const Card = styled.div`
   transition: ${theme.transitions.base};
   display: flex;
   flex-direction: column;
+  position: relative;
   
   &:hover {
     box-shadow: ${theme.shadows.lg};
   }
+`;
+
+const StatusBadge = styled.div`
+  position: absolute;
+  top: ${theme.spacing[0]};
+  right: ${theme.spacing[0]};
+  background: ${theme.colors.accent};
+  color: ${theme.colors.white};
+  padding: ${theme.spacing[1]} ${theme.spacing[3]};
+  border-radius: ${theme.borderRadius.full};
+  font-size: ${theme.fontSizes.sm};
+  font-weight: ${theme.fontWeights.medium};
+  z-index: 1;
 `;
 
 const ImageGallery = styled.div`
@@ -54,7 +68,7 @@ const Thumbnail = styled.button<{ isActive: boolean }>`
   border-radius: 50%;
   border: none;
   background: ${({ isActive }) =>
-        isActive ? theme.colors.accent : 'rgba(255, 255, 255, 0.5)'};
+    isActive ? theme.colors.accent : 'rgba(255, 255, 255, 0.5)'};
   cursor: pointer;
   transition: ${theme.transitions.base};
   
@@ -87,6 +101,7 @@ const TechStack = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: ${theme.spacing[2]};
+  margin-bottom: ${theme.spacing[4]};
 `;
 
 const TechBadge = styled.span`
@@ -129,33 +144,36 @@ const AuthorName = styled.div`
 `;
 
 interface ProjectCardProps {
-    name: string;
-    description: string;
-    images: Array<{ url: string; alt: string }>;
-    technologies: string[];
-    testimonial?: {
-        text: string;
-        author: string;
-        position: string;
-    };
-    link: string;
-    cta: string;
+  name: string;
+  description: string;
+  images: Array<{ url: string; alt: string }>;
+  technologies: string[];
+  testimonial?: {
+    text: string;
+    author: string;
+    position: string;
+  };
+  link: string;
+  cta: string;
+  status?: string;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
-    name,
-    description,
-    images,
-    technologies,
-    testimonial,
-    link,
-    cta
+  name,
+  description,
+  images,
+  technologies,
+  testimonial,
+  link,
+  cta,
+  status
 }) => {
-    const [activeImage, setActiveImage] = useState(0);
+  const [activeImage, setActiveImage] = useState(0);
 
-    return (
-        <Card>
-            {/* <ImageGallery>
+  return (
+    <Card>
+      {status && <StatusBadge>{status}</StatusBadge>}
+      {/* <ImageGallery>
         <MainImage src={images[activeImage].url} alt={images[activeImage].alt} />
         {images.length > 1 && (
           <ThumbnailsWrapper>
@@ -171,17 +189,17 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
         )}
       </ImageGallery> */}
 
-            <Content>
-                <ProjectName>{name}</ProjectName>
-                <Description>{description}</Description>
+      <Content>
+        <ProjectName>{name}</ProjectName>
+        <Description>{description}</Description>
 
-                <TechStack>
-                    {technologies.map((tech, index) => (
-                        <TechBadge key={index}>{tech}</TechBadge>
-                    ))}
-                </TechStack>
+        <TechStack>
+          {technologies.map((tech, index) => (
+            <TechBadge key={index}>{tech}</TechBadge>
+          ))}
+        </TechStack>
 
-                {/* {testimonial && testimonial.author && (
+        {/* {testimonial && testimonial.author && (
                     <Testimonial>
                         <TestimonialText>"{testimonial.text}"</TestimonialText>
                         <TestimonialAuthor>
@@ -191,12 +209,12 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                     </Testimonial>
                 )} */}
 
-                <ButtonWrapper>
-                    <Button as="a" href={link} size="lg" fullWidth>
-                        {cta}
-                    </Button>
-                </ButtonWrapper>
-            </Content>
-        </Card>
-    );
+        <ButtonWrapper>
+          <Button as="a" href={link} size="lg" fullWidth>
+            {cta}
+          </Button>
+        </ButtonWrapper>
+      </Content>
+    </Card>
+  );
 };

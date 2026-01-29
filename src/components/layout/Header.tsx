@@ -51,6 +51,20 @@ const NavLinks = styled.div`
   }
 `;
 
+const MainNavLinks = styled.div`
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing[8]};
+  
+  @media (max-width: ${theme.breakpoints.md}) {
+    gap: ${theme.spacing[4]};
+  }
+  
+  @media (max-width: ${theme.breakpoints.sm}) {
+    display: none;
+  }
+`;
+
 const NavLink = styled.a`
   color: ${theme.colors.textSecondary};
   font-weight: ${theme.fontWeights.medium};
@@ -94,18 +108,20 @@ export const Header: React.FC = () => {
                         <LogoImage src="/logo/logo-light.png" alt={t('siteName')} />
                     </LogoLink>
                     <NavLinks>
-                        <NavLink href="#services" onClick={scrollToSection('services')}>
-                            {t('navigation.services')}
-                        </NavLink>
-                        <NavLink href="#why-us" onClick={scrollToSection('why-us')}>
-                            {t('navigation.whyUs')}
-                        </NavLink>
-                        <NavLink href="#technologies" onClick={scrollToSection('technologies')}>
-                            {t('navigation.technologies')}
-                        </NavLink>
-                        <NavLink href="#contact" onClick={scrollToSection('contact')}>
-                            {t('navigation.contact')}
-                        </NavLink>
+                        <MainNavLinks>
+                            <NavLink href="#services" onClick={scrollToSection('services')}>
+                                {t('navigation.services')}
+                            </NavLink>
+                            <NavLink href="#why-us" onClick={scrollToSection('why-us')}>
+                                {t('navigation.whyUs')}
+                            </NavLink>
+                            <NavLink href="#technologies" onClick={scrollToSection('technologies')}>
+                                {t('navigation.technologies')}
+                            </NavLink>
+                            <NavLink href="#contact" onClick={scrollToSection('contact')}>
+                                {t('navigation.contact')}
+                            </NavLink>
+                        </MainNavLinks>
                         <Button as="a" href="#mvp-packages" onClick={scrollToSection('mvp-packages')} size="sm">
                             {t('navigation.mvp')}
                         </Button>
