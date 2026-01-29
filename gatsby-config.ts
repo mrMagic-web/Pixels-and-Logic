@@ -4,7 +4,7 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Pixels & Logic`,
     description: `Modern software house specializing in web applications, system integrations, and IT team leasing`,
-    siteUrl: `https://www.pixellogic.com`
+    siteUrl: `https://pixelsandlogic.eu`
   },
   graphqlTypegen: true,
   plugins: [
@@ -56,7 +56,7 @@ const config: GatsbyConfig = {
         localeJsonSourceName: 'locale',
         languages: ['en', 'pl'],
         defaultLanguage: 'en',
-        siteUrl: 'https://pixelsandlogic.eu/',
+        siteUrl: 'https://pixelsandlogic.eu',
         generateDefaultLanguagePage: true,
         redirect: false,
         i18nextOptions: {
