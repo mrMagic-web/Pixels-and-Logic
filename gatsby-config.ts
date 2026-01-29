@@ -20,7 +20,7 @@ const config: GatsbyConfig = {
         background_color: "#F2E7DC",
         theme_color: "#001542",
         display: "minimal-ui",
-        icon: "public/logo/Pandl_Logo_mini_light.png"
+        icon: "src/images/icon.png"
       }
     },
     "gatsby-transformer-remark",
