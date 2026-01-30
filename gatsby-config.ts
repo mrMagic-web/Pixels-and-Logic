@@ -4,23 +4,70 @@ const config: GatsbyConfig = {
   siteMetadata: {
     title: `Pixels & Logic`,
     description: `Modern software house specializing in web applications, system integrations, and IT team leasing`,
-    siteUrl: `https://pixelsandlogic.eu`
+    siteUrl: `https://pixelsandlogic.eu`,
+    author: `Pixels & Logic`,
+    keywords: `software house, web development, IT team leasing, system integration, MVP development, custom software, React, Node.js, TypeScript`
   },
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-emotion",
     "gatsby-plugin-image",
-    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        output: "/",
+        excludes: ["/404", "/404.html", "/en/404", "/pl/404"],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+            allSitePage {
+              nodes {
+                path
+              }
+            }
+          }
+        `,
+        resolveSiteUrl: () => "https://pixelsandlogic.eu",
+        resolvePages: ({
+          allSitePage: { nodes: allPages }
+        }: any) => {
+          return allPages.map((page: any) => {
+            return { ...page };
+          });
+        },
+        serialize: ({ path }: any) => {
+          return {
+            url: path,
+            changefreq: "weekly",
+            priority: path === "/" || path === "/en/" || path === "/pl/" ? 1.0 : 0.7
+          };
+        }
+      }
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "Pixels & Logic",
+        name: "Pixels & Logic - Building Modern Web Applications",
         short_name: "P&L",
+        description: "Software house specializing in web applications, system integrations, and IT team leasing",
         start_url: "/",
         background_color: "#F2E7DC",
         theme_color: "#001542",
         display: "minimal-ui",
-        icon: "src/images/icon.png"
+        icon: "src/images/icon.png",
+        icon_options: {
+          purpose: "any maskable"
+        },
+        lang: "en",
+        categories: ["business", "technology"],
+        cache_busting_mode: "query",
+        include_favicon: true,
+        legacy: true,
+        crossOrigin: "anonymous"
       }
     },
     "gatsby-transformer-remark",

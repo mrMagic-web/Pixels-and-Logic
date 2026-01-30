@@ -1,5 +1,10 @@
 {
   "siteName": "Pixels & Logic",
+  "seo": {
+    "title": "Pixels & Logic - Building Modern Web Applications",
+    "description": "Software house specializing in web applications, system integrations, and IT team leasing. 14 years of enterprise experience. Custom software development, MVP packages, and IT consulting.",
+    "keywords": "software house, web development, IT team leasing, system integration, MVP development, custom software, React, Node.js, TypeScript"
+  },
   "navigation": {
     "services": "Services",
     "whyUs": "Why Us",

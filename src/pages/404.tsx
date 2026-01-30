@@ -6,6 +6,7 @@ import { theme } from '../styles/theme';
 import { Layout } from '../components/layout/Layout';
 import { Container } from '../components/ui/Container';
 import { Button } from '../components/ui/Button';
+import { SEO } from '../components/SEO';
 
 const NotFoundSection = styled.div`
   min-height: 80vh;
@@ -61,4 +62,10 @@ const NotFoundPage: React.FC<PageProps> = () => {
 
 export default NotFoundPage;
 
-export const Head: HeadFC = () => <title>404 - Page Not Found | Pixels & Logic</title>;
+export const Head: HeadFC = () => (
+  <SEO
+    title="404 - Page Not Found | Pixels & Logic"
+    description="The page you are looking for could not be found."
+    noindex={true}
+  />
+);
