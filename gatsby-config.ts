@@ -114,6 +114,14 @@ const config: GatsbyConfig = {
           nsSeparator: false
         }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-54NPJ2GL',
+        includeInDevelopment: false,
+        defaultDataLayer: { platform: 'gatsby' }
+      }
     }
   ]
 };
