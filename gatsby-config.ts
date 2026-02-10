@@ -122,6 +122,15 @@ const config: GatsbyConfig = {
         includeInDevelopment: false,
         defaultDataLayer: { platform: 'gatsby' }
       }
+    },
+    {
+      resolve: 'gatsby-plugin-google-gtag',
+      options: {
+        trackingIds: ['G-NDM30N1XM9'],
+        pluginConfig: {
+          head: true,
+        },
+      },
     }
   ]
 };
