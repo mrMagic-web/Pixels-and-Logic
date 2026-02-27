@@ -87,7 +87,7 @@ export const ContactInfo: React.FC = () => {
     <InfoWrapper>
       <ProfilePhoto src={photoSrc} alt="Maciej" />
       <ProfileName>Maciej</ProfileName>
-      <ProfileTagline>Let's discuss your project</ProfileTagline>
+      <ProfileTagline>{t('subtitle')}</ProfileTagline>
 
       <InfoItem>
         <IconWrapper>✉️</IconWrapper>

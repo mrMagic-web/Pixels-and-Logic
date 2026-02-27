@@ -34,7 +34,6 @@ export const Contact: React.FC = () => {
             <Container>
                 <SectionHeading
                     title={t('title')}
-                    subtitle={t('subtitle')}
                 />
                 <ContactGrid>
                     <InfoColumn>

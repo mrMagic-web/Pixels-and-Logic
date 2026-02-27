@@ -7,10 +7,11 @@
   },
   "navigation": {
     "services": "Services",
-    "whyUs": "Why Us",
-    "technologies": "Technologies",
+    "packages": "Packages",
     "contact": "Contact",
-    "mvp": "MVP in 5 days"
+    "mvp": "MVP in 5 days",
+    "whyUs": "Why Us",
+    "technologies": "Technologies"
   },
   "footer": {
     "copyright": "© 2026 Pixels & Logic. All rights reserved.",

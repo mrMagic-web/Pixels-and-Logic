@@ -77,6 +77,13 @@ export const HeroContent: React.FC = () => {
     }
   };
 
+  const scrollToPackages = () => {
+    const element = document.getElementById('packages');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <Content>
       <Headline><span>{t('headline')}</span></Headline>
@@ -86,7 +93,7 @@ export const HeroContent: React.FC = () => {
           {t('cta.primary')}
         </Button>
         {/* use "secondary" variant for better visibility on hero section */}
-        <Button size="lg" variant="secondary" onClick={scrollToServices}>
+        <Button size="lg" variant="secondary" onClick={scrollToPackages}>
           {t('cta.secondary')}
         </Button>
       </ButtonGroup>

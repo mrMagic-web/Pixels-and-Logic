@@ -41,8 +41,8 @@
           "cta": "Choose Package",
           "features": [
             "Complete web application (8-12 pages)",
-            "Advanced user authentication and authorization",
-            "Full admin panel with analytics",
+            "User authentication and authorization",
+            "Admin panel with analytics",
             "2-3 key business features fully implemented",
             "Database design and API development",
             "Payment integration (Stripe)",
@@ -95,6 +95,7 @@
           "cta": "Choose Package",
           "features": [
             "Responsive single-page design",
+            "Web address and SSH setup",
             "Contact form",
             "SEO optimization",
             "Basic analytics setup",
@@ -113,6 +114,7 @@
           "cta": "Choose Package",
           "features": [
             "Custom design with multiple sections",
+            "Web address and SSH setup",
             "CMS integration for easy updates",
             "SEO-friendly structure",
             "Contact & lead forms",
@@ -131,6 +133,7 @@
           "cta": "Choose Package",
           "features": [
             "Complete custom scope",
+            "Web address and SSH setup",
             "Advanced integrations",
             "E‑commerce or members areas",
             "Performance & security audits",

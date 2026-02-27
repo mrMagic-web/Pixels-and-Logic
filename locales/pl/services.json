@@ -2,18 +2,18 @@
   "title": "Co robimy",
   "cards": [
     {
-      "title": "Budowa aplikacji webowych",
-      "description": "Kompleksowe rozwiązania — analiza, UI/UX, backend, frontend, bazy danych i wdrożenie.",
+      "title": "Tworzymy webowe aplikacje, które działają błyskawicznie i skalują się bez kompromisów",
+      "description": "Magia end-to-end: od sprytnej koncepcji produktowej i dopracowanego designu po niezawodną architekturę i wdrożenia bez przestojów. Twoja następna wielka rzecz zasługuje na kod tej klasy.",
       "cta": "Dowiedz się więcej"
     },
     {
-      "title": "Integracje i modernizacja systemów",
-      "description": "Integracje API, migracje danych, refaktoryzacja legacy, optymalizacja działania.",
+      "title": "Przeciągamy przestarzałe systemy w przyszłość",
+      "description": "API, które po prostu działają. Płynne migracje. Skoki wydajności, które wywołują uśmiech u udziałowców. Modernizujemy, nie niszcząc tego, co już przynosi zyski.",
       "cta": "Dowiedz się więcej"
     },
     {
-      "title": "Body leasing zespołu IT",
-      "description": "Senior/Lead + mid + junior. Wsparcie projektów i elastyczne kontrakty.",
+      "title": "Stajemy się Twoim rozszerzonym inżynierskim mózgiem",
+      "description": "Starannie dobrani seniorzy + midzi + juniorzy. Rzeczywista odpowiedzialność, elastyczne rampy, zero polityki. Pomyśl o nas jako o zespole, który zawsze chciałeś móc zatrudnić od razu.",
       "cta": "Dowiedz się więcej"
     }
   ]

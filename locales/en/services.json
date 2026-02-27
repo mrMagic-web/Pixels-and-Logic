@@ -2,18 +2,18 @@
   "title": "What We Do",
   "cards": [
     {
-      "title": "Web Application Development",
-      "description": "Comprehensive solutions — analysis, UI/UX, backend, frontend, databases and deployment.",
+      "title": "We craft web apps that move fast and scale hard",
+      "description": "End-to-end magic: from sharp product thinking and pixel-perfect design to bulletproof architecture and zero-downtime launches. Your next big thing deserves code this clean.",
       "cta": "Learn more"
     },
     {
-      "title": "Integrations & System Modernization",
-      "description": "API integrations, data migrations, legacy refactoring, performance optimization.",
+      "title": "We drag legacy systems into the future",
+      "description": "APIs that just work. Smooth migrations. Performance leaps that make stakeholders smile. We modernize without breaking what already prints money.",
       "cta": "Learn more"
     },
     {
-      "title": "IT Team Leasing",
-      "description": "Senior/Lead + mid + junior. Project support and flexible contracts.",
+      "title": "We become your extended engineering brain",
+      "description": "Hand-picked seniors + mids + juniors. Real ownership, flexible ramps, no politics. Think of us as the team you always wished you could hire instantly.",
       "cta": "Learn more"
     }
   ]

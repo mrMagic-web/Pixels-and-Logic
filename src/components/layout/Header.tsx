@@ -118,11 +118,8 @@ export const Header: React.FC = () => {
               <NavLink isScrolled={isScrolled} href="#services" onClick={scrollToSection('services')}>
                 {t('navigation.services')}
               </NavLink>
-              <NavLink isScrolled={isScrolled} href="#why-us" onClick={scrollToSection('why-us')}>
-                {t('navigation.whyUs')}
-              </NavLink>
-              <NavLink isScrolled={isScrolled} href="#technologies" onClick={scrollToSection('technologies')}>
-                {t('navigation.technologies')}
+              <NavLink isScrolled={isScrolled} href="#packages" onClick={scrollToSection('packages')}>
+                {t('navigation.packages')}
               </NavLink>
               <NavLink isScrolled={isScrolled} href="#contact" onClick={scrollToSection('contact')}>
                 {t('navigation.contact')}
