@@ -23,17 +23,27 @@ const HeroSection = styled(Section)`
 const HeroContainer = styled(Container)`
   position: relative;
   margin-left: 0;
+  margin-right: auto;
   z-index: 2;
+
+  /* on extra-large screens, push the container in from the left a bit */
+  @media (min-width: ${theme.breakpoints['2xl']}) {
+    margin-left: 10%;
+    max-width: calc(${theme.breakpoints['2xl']} - 10%);
+  }
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: ${theme.spacing[20]};
+  text-align: left;
   
   @media (max-width: ${theme.breakpoints.lg}) {
     flex-direction: column;
     text-align: center;
+    justify-content: center;
   }
 `;
 

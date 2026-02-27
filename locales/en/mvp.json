@@ -1,78 +1,202 @@
 {
-  "title": "Choose Your MVP Package",
-  "subtitle": "Three packages designed for different project scopes and budgets.",
-  "packages": [
-    {
-      "badge": "Most Affordable",
-      "name": "Starter MVP",
-      "description": "Perfect for validating a simple idea",
-      "price": "9,900 PLN",
-      "priceNote": "net",
-      "duration": "5 business days",
-      "pages": "3-5 pages",
-      "cta": "Choose Package",
-      "features": [
-        "Landing page + 2-4 additional pages",
-        "Contact form with email integration",
-        "Simple user authentication (login/registration)",
-        "Basic admin panel (user management, content editing)",
-        "Responsive design (mobile + desktop)",
-        "Production deployment on client's Vercel instance",
-        "Source code handover",
-        "5 business days from project kickoff",
-        "Daily progress updates"
-      ]
+  "tabs": {
+    "mvp": "MVP & Prototypes",
+    "websites": "Websites",
+    "saas": "SaaS & Platforms"
+  },
+  "categories": {
+    "mvp": {
+      "title": "Choose Your MVP Package",
+      "subtitle": "Three packages designed for different project scopes and budgets.",
+      "packages": [
+        {
+          "badge": "Most Affordable",
+          "name": "Starter MVP",
+          "description": "Perfect for validating a simple idea",
+          "price": "9,900 PLN",
+          "priceNote": "net",
+          "duration": "5 business days",
+          "pages": "3-5 pages",
+          "cta": "Choose Package",
+          "features": [
+            "Landing page + 2-4 additional pages",
+            "Contact form with email integration",
+            "Simple user authentication (login/registration)",
+            "Basic admin panel (user management, content editing)",
+            "Responsive design (mobile + desktop)",
+            "Production deployment to your environment (Jamstack, cloud, or traditional hosting)",
+            "Source code handover",
+            "5 business days from project kickoff",
+            "Daily progress updates"
+          ]
+        },
+        {
+          "badge": "Best Value",
+          "name": "Professional MVP",
+          "description": "Full MVP with advanced functionality",
+          "price": "19,800 PLN",
+          "priceNote": "net",
+          "duration": "12 business days",
+          "pages": "8-12 pages",
+          "cta": "Choose Package",
+          "features": [
+            "Complete web application (8-12 pages)",
+            "Advanced user authentication and authorization",
+            "Full admin panel with analytics",
+            "2-3 key business features fully implemented",
+            "Database design and API development",
+            "Payment integration (Stripe)",
+            "Email service integration (SendGrid/Mailgun)",
+            "File upload and media management",
+            "User roles and permissions system",
+            "Performance optimization",
+            "12 business days from project kickoff"
+          ]
+        },
+        {
+          "badge": "For Enterprise",
+          "name": "Custom MVP",
+          "description": "Tailored solution for complex projects",
+          "price": "Contact Us",
+          "priceNote": "",
+          "duration": "Flexible timeline",
+          "pages": "Per requirements",
+          "cta": "Choose Package",
+          "features": [
+            "Custom scope based on your specifications",
+            "Advanced integrations and APIs",
+            "Complex business logic implementation",
+            "Multi-level user management",
+            "Advanced analytics and reporting",
+            "Third-party service integrations",
+            "Custom deployment strategy",
+            "Extended testing and QA",
+            "Performance monitoring setup",
+            "Team training and knowledge transfer",
+            "Ongoing support options",
+            "Flexible timeline based on project complexity"
+          ]
+        }
+      ],
+      "includedLabel": "Included:"
     },
-    {
-      "badge": "Best Value",
-      "name": "Professional MVP",
-      "description": "Full MVP with advanced functionality",
-      "price": "19,800 PLN",
-      "priceNote": "net",
-      "duration": "12 business days",
-      "pages": "8-12 pages",
-      "cta": "Choose Package",
-      "features": [
-        "Complete web application (8-12 pages)",
-        "Advanced user authentication and authorization",
-        "Full admin panel with analytics",
-        "2-3 key business features fully implemented",
-        "Database design and API development",
-        "Payment integration (Stripe)",
-        "Email service integration (SendGrid/Mailgun)",
-        "File upload and media management",
-        "User roles and permissions system",
-        "Production deployment on client's Vercel instance",
-        "Performance optimization",
-        "Source code with documentation",
-        "12 business days from project kickoff",
-        "Daily updates and weekly demos"
-      ]
+    "websites": {
+      "title": "Website Packages",
+      "subtitle": "From simple landing pages to full marketing sites.",
+      "packages": [
+        {
+          "badge": "Basic",
+          "name": "Landing Page",
+          "description": "A clean one-page site to promote your idea",
+          "price": "5,900 PLN",
+          "priceNote": "net",
+          "duration": "3 business days",
+          "pages": "1 page",
+          "cta": "Choose Package",
+          "features": [
+            "Responsive single-page design",
+            "Contact form",
+            "SEO optimization",
+            "Basic analytics setup",
+            "Deployment to chosen hosting platform",
+            "Source code"
+          ]
+        },
+        {
+          "badge": "Standard",
+          "name": "Business Website",
+          "description": "Multi-page marketing site with CMS support",
+          "price": "12,900 PLN",
+          "priceNote": "net",
+          "duration": "7 business days",
+          "pages": "up to 5 pages",
+          "cta": "Choose Package",
+          "features": [
+            "Custom design with multiple sections",
+            "CMS integration for easy updates",
+            "SEO-friendly structure",
+            "Contact & lead forms",
+            "Performance optimization",
+            "Deployment & hosting guidance"
+          ]
+        },
+        {
+          "badge": "Custom",
+          "name": "Custom Website",
+          "description": "Tailored website to your specifications",
+          "price": "Contact Us",
+          "priceNote": "",
+          "duration": "Flexible timeline",
+          "pages": "Per requirements",
+          "cta": "Choose Package",
+          "features": [
+            "Complete custom scope",
+            "Advanced integrations",
+            "E‑commerce or members areas",
+            "Performance & security audits",
+            "Training & documentation"
+          ]
+        }
+      ],
+      "includedLabel": "Included:"
     },
-    {
-      "badge": "For Enterprise",
-      "name": "Custom MVP",
-      "description": "Tailored solution for complex projects",
-      "price": "Contact Us",
-      "priceNote": "",
-      "duration": "Flexible timeline",
-      "pages": "Per requirements",
-      "cta": "Choose Package",
-      "features": [
-        "Custom scope based on your specifications",
-        "Advanced integrations and APIs",
-        "Complex business logic implementation",
-        "Multi-level user management",
-        "Advanced analytics and reporting",
-        "Third-party service integrations",
-        "Custom deployment strategy",
-        "Extended testing and QA",
-        "Performance monitoring setup",
-        "Team training and knowledge transfer",
-        "Ongoing support options",
-        "Flexible timeline based on project complexity"
-      ]
+    "saas": {
+      "title": "SaaS & Platform Packages",
+      "subtitle": "Build scalable multi-user software with rich features.",
+      "packages": [
+        {
+          "badge": "Starter",
+          "name": "Basic SaaS",
+          "description": "Core functionality for your platform",
+          "price": "29,900 PLN",
+          "priceNote": "net",
+          "duration": "20 business days",
+          "pages": "N/A",
+          "cta": "Choose Package",
+          "features": [
+            "User registration & login",
+            "Admin dashboard",
+            "API backend",
+            "Basic analytics",
+            "Deployment guidance"
+          ]
+        },
+        {
+          "badge": "Growth",
+          "name": "Growth SaaS",
+          "description": "Features for a growing user base",
+          "price": "49,900 PLN",
+          "priceNote": "net",
+          "duration": "35 business days",
+          "pages": "N/A",
+          "cta": "Choose Package",
+          "features": [
+            "Multi-tenant architecture",
+            "Payment integration",
+            "Advanced analytics & reporting",
+            "Role-based access control",
+            "Performance tuning"
+          ]
+        },
+        {
+          "badge": "Enterprise",
+          "name": "Custom SaaS",
+          "description": "Fully customized platform solution",
+          "price": "Contact Us",
+          "priceNote": "",
+          "duration": "Flexible timeline",
+          "pages": "Per requirements",
+          "cta": "Choose Package",
+          "features": [
+            "Tailored business logic",
+            "Third-party integrations",
+            "High-availability architecture",
+            "Security & compliance support",
+            "Ongoing maintenance options"
+          ]
+        }
+      ],
+      "includedLabel": "Included:"
     }
-  ],
-  "includedLabel": "Included:"
+  }
 }

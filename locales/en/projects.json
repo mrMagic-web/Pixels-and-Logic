@@ -81,5 +81,23 @@
       },
       "link": "https://pattern-market.vercel.app/"
     }
+    ,
+    {
+      "name": "Szklarnia Sielska – Event Venue & Online Presence",
+      "description": "Szklarnia Sielska – Event Place Website\nModern web application for presenting and managing an event venue, including event listings, rental bookings, image gallery, and an online shop.",
+      "images": [
+        {
+          "url": "/projects/szklarnia.png",
+          "alt": "Szklarnia Sielska - Event Venue Website"
+        }
+      ],
+      "technologies": ["Gatsby", "React", "Emotion", "TypeScript", "i18next", "PayU (shop integration placeholder)"],
+      "testimonial": {
+        "text": "",
+        "author": "",
+        "position": ""
+      },
+      "link": ""
+    }
   ]
 }

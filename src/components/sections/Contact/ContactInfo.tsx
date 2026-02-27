@@ -3,10 +3,37 @@ import styled from '@emotion/styled';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { theme } from '../../../styles/theme';
 
+// webpack will handle image import and return a string URL
+import photoSrc from '../../../images/maciej.jpg';
+
 const InfoWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: ${theme.spacing[6]};
+`;
+
+const ProfilePhoto = styled.img`
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+`;
+
+const ProfileName = styled.h3`
+  text-align: center;
+  font-size: ${theme.fontSizes['2xl']};
+  color: ${theme.colors.primary};
+  margin: ${theme.spacing[2]} 0 0;
+`;
+
+const ProfileTagline = styled.p`
+  text-align: center;
+  font-size: ${theme.fontSizes.base};
+  color: ${theme.colors.textSecondary};
+  margin: ${theme.spacing[1]} 0 ${theme.spacing[4]};
 `;
 
 const InfoItem = styled.div`
@@ -52,29 +79,35 @@ const Value = styled.a`
 `;
 
 export const ContactInfo: React.FC = () => {
-    const { t } = useTranslation('contact');
+  const { t } = useTranslation('contact');
 
-    return (
-        <InfoWrapper>
-            <InfoItem>
-                <IconWrapper>✉️</IconWrapper>
-                <InfoContent>
-                    <Label>Email</Label>
-                    <Value href={`mailto:${t('info.email')}`}>
-                        {t('info.email')}
-                    </Value>
-                </InfoContent>
-            </InfoItem>
+  // photoSrc is imported at top of file
 
-            <InfoItem>
-                <IconWrapper>📱</IconWrapper>
-                <InfoContent>
-                    <Label>Phone</Label>
-                    <Value href={`tel:${t('info.phone')}`}>
-                        {t('info.phone')}
-                    </Value>
-                </InfoContent>
-            </InfoItem>
-        </InfoWrapper>
-    );
+  return (
+    <InfoWrapper>
+      <ProfilePhoto src={photoSrc} alt="Maciej" />
+      <ProfileName>Maciej</ProfileName>
+      <ProfileTagline>Let's discuss your project</ProfileTagline>
+
+      <InfoItem>
+        <IconWrapper>✉️</IconWrapper>
+        <InfoContent>
+          <Label>Email</Label>
+          <Value href={`mailto:${t('info.email')}`}>
+            {t('info.email')}
+          </Value>
+        </InfoContent>
+      </InfoItem>
+
+      <InfoItem>
+        <IconWrapper>📱</IconWrapper>
+        <InfoContent>
+          <Label>Phone</Label>
+          <Value href={`tel:${t('info.phone')}`}>
+            {t('info.phone')}
+          </Value>
+        </InfoContent>
+      </InfoItem>
+    </InfoWrapper>
+  );
 };

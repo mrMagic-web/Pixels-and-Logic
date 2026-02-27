@@ -13,11 +13,13 @@ const HeaderWrapper = styled.header<{ isScrolled: boolean }>`
   right: 0;
   z-index: ${theme.zIndex.sticky};
   background-color: ${({ isScrolled }) =>
-        isScrolled ? theme.colors.white : 'transparent'};
+    isScrolled ? theme.colors.white : 'transparent'};
   box-shadow: ${({ isScrolled }) =>
-        isScrolled ? theme.shadows.md : 'none'};
+    isScrolled ? theme.shadows.md : 'none'};
   transition: ${theme.transitions.base};
   padding: ${theme.spacing[2]} 0;
+  border-bottom:${({ isScrolled }) =>
+    !isScrolled ? `1px solid ${theme.colors.accentAlt}` : 'none'}; 
 `;
 
 const Nav = styled.nav`
@@ -65,13 +67,14 @@ const MainNavLinks = styled.div`
   }
 `;
 
-const NavLink = styled.a`
-  color: ${theme.colors.textSecondary};
+const NavLink = styled.a<{ isScrolled: boolean }>`
+  color: ${({ isScrolled }) =>
+    isScrolled ? theme.colors.backgroundDark : theme.colors.white};
   font-weight: ${theme.fontWeights.medium};
   transition: ${theme.transitions.base};
   
   &:hover {
-    color: ${theme.colors.primary};
+    color: ${theme.colors.textSecondary};
   }
   
   @media (max-width: ${theme.breakpoints.sm}) {
@@ -80,55 +83,58 @@ const NavLink = styled.a`
 `;
 
 export const Header: React.FC = () => {
-    const [isScrolled, setIsScrolled] = useState(false);
-    const { t } = useTranslation('common');
+  const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useTranslation('common');
 
-    useEffect(() => {
-        const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    const scrollToSection = (id: string) => (e: React.MouseEvent) => {
-        e.preventDefault();
-        const element = document.getElementById(id);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
     };
 
-    return (
-        <HeaderWrapper isScrolled={isScrolled}>
-            <Container>
-                <Nav>
-                    <LogoLink to="/">
-                        <LogoImage src="/logo/logo-light.png" alt={t('siteName')} />
-                    </LogoLink>
-                    <NavLinks>
-                        <MainNavLinks>
-                            <NavLink href="#services" onClick={scrollToSection('services')}>
-                                {t('navigation.services')}
-                            </NavLink>
-                            <NavLink href="#why-us" onClick={scrollToSection('why-us')}>
-                                {t('navigation.whyUs')}
-                            </NavLink>
-                            <NavLink href="#technologies" onClick={scrollToSection('technologies')}>
-                                {t('navigation.technologies')}
-                            </NavLink>
-                            <NavLink href="#contact" onClick={scrollToSection('contact')}>
-                                {t('navigation.contact')}
-                            </NavLink>
-                        </MainNavLinks>
-                        <Button as="a" href="#mvp-packages" onClick={scrollToSection('mvp-packages')} size="sm">
-                            {t('navigation.mvp')}
-                        </Button>
-                        <LanguageToggle />
-                    </NavLinks>
-                </Nav>
-            </Container>
-        </HeaderWrapper>
-    );
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToSection = (id: string) => (e: React.MouseEvent) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <HeaderWrapper isScrolled={isScrolled}>
+      <Container>
+        <Nav>
+          <LogoLink to="/">
+            <LogoImage
+              src={isScrolled ? "/logo/logo-dark.png" : "/logo/logo-light.png"}
+              alt={t('siteName')}
+            />
+          </LogoLink>
+          <NavLinks>
+            <MainNavLinks>
+              <NavLink isScrolled={isScrolled} href="#services" onClick={scrollToSection('services')}>
+                {t('navigation.services')}
+              </NavLink>
+              <NavLink isScrolled={isScrolled} href="#why-us" onClick={scrollToSection('why-us')}>
+                {t('navigation.whyUs')}
+              </NavLink>
+              <NavLink isScrolled={isScrolled} href="#technologies" onClick={scrollToSection('technologies')}>
+                {t('navigation.technologies')}
+              </NavLink>
+              <NavLink isScrolled={isScrolled} href="#contact" onClick={scrollToSection('contact')}>
+                {t('navigation.contact')}
+              </NavLink>
+            </MainNavLinks>
+            <Button as="a" href="#packages" onClick={scrollToSection('packages')} size="sm">
+              {t('navigation.mvp')}
+            </Button>
+            <LanguageToggle />
+          </NavLinks>
+        </Nav>
+      </Container>
+    </HeaderWrapper>
+  );
 };

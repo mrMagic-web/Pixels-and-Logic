@@ -1,78 +1,202 @@
 {
-  "title": "Wybierz pakiet MVP",
-  "subtitle": "Trzy pakiety zaprojektowane dla różnych zakresów projektów i budżetów.",
-  "packages": [
-    {
-      "badge": "Najtańszy",
-      "name": "Starter MVP",
-      "description": "Idealny do walidacji prostego pomysłu",
-      "price": "9 900 zł",
-      "priceNote": "netto",
-      "duration": "5 dni roboczych",
-      "pages": "3-5 stron",
-      "cta": "Wybierz pakiet",
-      "features": [
-        "Strona landingowa + 2-4 dodatkowe strony",
-        "Formularz kontaktowy z integracją email",
-        "Prosta autentyfikacja użytkownika (login/rejestracja)",
-        "Podstawowy panel admina (zarządzanie użytkownikami, edycja treści)",
-        "Responsywny design (mobile + desktop)",
-        "Wdrożenie produkcyjne na instancji Vercel klienta",
-        "Przekazanie kodu źródłowego",
-        "5 dni roboczych od uruchomienia projektu",
-        "Codzienne aktualizacje postępu"
-      ]
+  "tabs": {
+    "mvp": "MVP i prototypy",
+    "websites": "Strony internetowe",
+    "saas": "SaaS i platformy"
+  },
+  "categories": {
+    "mvp": {
+      "title": "Wybierz pakiet MVP",
+      "subtitle": "Trzy pakiety zaprojektowane dla różnych zakresów projektów i budżetów.",
+      "packages": [
+        {
+          "badge": "Najtańszy",
+          "name": "Starter MVP",
+          "description": "Idealny do walidacji prostego pomysłu",
+          "price": "9 900 zł",
+          "priceNote": "netto",
+          "duration": "5 dni roboczych",
+          "pages": "3-5 stron",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Strona landingowa + 2-4 dodatkowe strony",
+            "Formularz kontaktowy z integracją email",
+            "Prosta autentyfikacja użytkownika (login/rejestracja)",
+            "Podstawowy panel admina (zarządzanie użytkownikami, edycja treści)",
+            "Responsywny design (mobile + desktop)",
+            "Wdrożenie produkcyjne na wybraną platformę (Jamstack, chmura lub tradycyjne)",
+            "Przekazanie kodu źródłowego",
+            "5 dni roboczych od uruchomienia projektu",
+            "Codzienne aktualizacje postępu"
+          ]
+        },
+        {
+          "badge": "Najlepsza wartość",
+          "name": "Professional MVP",
+          "description": "Pełne MVP z zaawansowaną funkcjonalnością",
+          "price": "19 800 zł",
+          "priceNote": "netto",
+          "duration": "12 dni roboczych",
+          "pages": "8-12 stron",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Kompletna aplikacja webowa (8-12 stron)",
+            "Zaawansowana autentyfikacja i autoryzacja użytkowników",
+            "Pełny panel administracyjny z analityką",
+            "2-3 kluczowe funkcje biznesowe w pełni zaimplementowane",
+            "Projekt bazy danych i rozwój API",
+            "Integracja płatności (Stripe)",
+            "Integracja serwisu email (SendGrid/Mailgun)",
+            "Przesyłanie plików i zarządzanie mediami",
+            "System ról i uprawnień użytkowników",
+            "Optymalizacja wydajności",
+            "12 dni roboczych od uruchomienia projektu"
+          ]
+        },
+        {
+          "badge": "Dla przedsiębiorstw",
+          "name": "Custom MVP",
+          "description": "Rozwiązanie szyte na miarę dla złożonych projektów",
+          "price": "Skontaktuj się",
+          "priceNote": "",
+          "duration": "Elastyczny termin",
+          "pages": "Wg wymagań",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Zakres customowy na podstawie Twoich specyfikacji",
+            "Zaawansowane integracje i API",
+            "Implementacja złożonej logiki biznesowej",
+            "Wielopoziomowe zarządzanie użytkownikami",
+            "Zaawansowana analityka i raportowanie",
+            "Integracje z usługami trzecimi",
+            "Strategia wdrożenia customowa",
+            "Rozszerzone testowanie i QA",
+            "Konfiguracja monitorowania wydajności",
+            "Szkolenie zespołu i przekazanie wiedzy",
+            "Opcje wsparcia ciągłego",
+            "Elastyczny termin wg złożoności projektu"
+          ]
+        }
+      ],
+      "includedLabel": "W cenie:"
     },
-    {
-      "badge": "Najlepsza wartość",
-      "name": "Professional MVP",
-      "description": "Pełne MVP z zaawansowaną funkcjonalnością",
-      "price": "19 800 zł",
-      "priceNote": "netto",
-      "duration": "12 dni roboczych",
-      "pages": "8-12 stron",
-      "cta": "Wybierz pakiet",
-      "features": [
-        "Kompletna aplikacja webowa (8-12 stron)",
-        "Zaawansowana autentyfikacja i autoryzacja użytkowników",
-        "Pełny panel administracyjny z analityką",
-        "2-3 kluczowe funkcje biznesowe w pełni zaimplementowane",
-        "Projekt bazy danych i rozwój API",
-        "Integracja płatności (Stripe)",
-        "Integracja serwisu email (SendGrid/Mailgun)",
-        "Przesyłanie plików i zarządzanie mediami",
-        "System ról i uprawnień użytkowników",
-        "Wdrożenie produkcyjne na instancji Vercel klienta",
-        "Optymalizacja wydajności",
-        "Kod źródłowy z dokumentacją",
-        "12 dni roboczych od uruchomienia projektu",
-        "Codzienne aktualizacje i cotygodniowe demo"
-      ]
+    "websites": {
+      "title": "Pakiety stron internetowych",
+      "subtitle": "Od prostych landingów po pełne witryny marketingowe.",
+      "packages": [
+        {
+          "badge": "Podstawowy",
+          "name": "Landing Page",
+          "description": "Czysta jednostronicowa strona do promowania pomysłu",
+          "price": "5 900 zł",
+          "priceNote": "netto",
+          "duration": "3 dni robocze",
+          "pages": "1 strona",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Responsywny projekt jednostronicowy",
+            "Formularz kontaktowy",
+            "Optymalizacja SEO",
+            "Podstawowa konfiguracja analityki",
+            "Wdrożenie na wybraną platformę hostingową",
+            "Kod źródłowy"
+          ]
+        },
+        {
+          "badge": "Standardowy",
+          "name": "Strona biznesowa",
+          "description": "Wielostronicowa witryna marketingowa z CMS",
+          "price": "12 900 zł",
+          "priceNote": "netto",
+          "duration": "7 dni roboczych",
+          "pages": "do 5 stron",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Projekt wielosesyjny",
+            "Integracja CMS do łatwej edycji",
+            "Struktura przyjazna SEO",
+            "Formularze kontaktowe i leadowe",
+            "Optymalizacja wydajności",
+            "Wdrożenie i wskazówki hostingowe"
+          ]
+        },
+        {
+          "badge": "Custom",
+          "name": "Strona na zamówienie",
+          "description": "Strona dopasowana do Twoich wymagań",
+          "price": "Skontaktuj się",
+          "priceNote": "",
+          "duration": "Elastyczny termin",
+          "pages": "Wg wymagań",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Pełny zakres customowy",
+            "Zaawansowane integracje",
+            "E‑commerce lub sekcje dla członków",
+            "Audyt wydajności i bezpieczeństwa",
+            "Szkolenie i dokumentacja"
+          ]
+        }
+      ],
+      "includedLabel": "W cenie:"
     },
-    {
-      "badge": "Dla przedsiębiorstw",
-      "name": "Custom MVP",
-      "description": "Rozwiązanie szyte na miarę dla złożonych projektów",
-      "price": "Skontaktuj się",
-      "priceNote": "",
-      "duration": "Elastyczny termin",
-      "pages": "Wg wymagań",
-      "cta": "Wybierz pakiet",
-      "features": [
-        "Zakres customowy na podstawie Twoich specyfikacji",
-        "Zaawansowane integracje i API",
-        "Implementacja złożonej logiki biznesowej",
-        "Wielopoziomowe zarządzanie użytkownikami",
-        "Zaawansowana analityka i raportowanie",
-        "Integracje z usługami trzecimi",
-        "Strategia wdrożenia customowa",
-        "Rozszerzone testowanie i QA",
-        "Konfiguracja monitorowania wydajności",
-        "Szkolenie zespołu i przekazanie wiedzy",
-        "Opcje wsparcia ciągłego",
-        "Elastyczny termin wg złożoności projektu"
-      ]
+    "saas": {
+      "title": "Pakiety SaaS i platform",
+      "subtitle": "Buduj skalowalne oprogramowanie wieloużytkownikowe.",
+      "packages": [
+        {
+          "badge": "Startowy",
+          "name": "Podstawowy SaaS",
+          "description": "Podstawowa funkcjonalność dla Twojej platformy",
+          "price": "29 900 zł",
+          "priceNote": "netto",
+          "duration": "20 dni roboczych",
+          "pages": "N/A",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Rejestracja i logowanie użytkownika",
+            "Panel administracyjny",
+            "Backend API",
+            "Podstawowa analiza",
+            "Instrukcje wdrożenia"
+          ]
+        },
+        {
+          "badge": "Rozwojowy",
+          "name": "SaaS Rozwojowy",
+          "description": "Funkcje dla rosnącej bazy użytkowników",
+          "price": "49 900 zł",
+          "priceNote": "netto",
+          "duration": "35 dni roboczych",
+          "pages": "N/A",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Architektura multi-tenant",
+            "Integracja płatności",
+            "Zaawansowana analityka i raportowanie",
+            "Kontrola dostępu oparta na rolach",
+            "Optymalizacja wydajności"
+          ]
+        },
+        {
+          "badge": "Enterprise",
+          "name": "SaaS Custom",
+          "description": "W pełni dostosowana platforma",
+          "price": "Skontaktuj się",
+          "priceNote": "",
+          "duration": "Elastyczny termin",
+          "pages": "Wg wymagań",
+          "cta": "Wybierz pakiet",
+          "features": [
+            "Logika biznesowa na mierę",
+            "Integracje z usługami trzecimi",
+            "Architektura high-availability",
+            "Wsparcie bezpieczeństwa i zgodności",
+            "Opcje utrzymania"
+          ]
+        }
+      ],
+      "includedLabel": "W cenie:"
     }
-  ],
-  "includedLabel": "W cenie:"
+  }
 }

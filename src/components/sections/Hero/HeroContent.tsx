@@ -85,7 +85,8 @@ export const HeroContent: React.FC = () => {
         <Button size="lg" onClick={scrollToContact}>
           {t('cta.primary')}
         </Button>
-        <Button size="lg" variant="outline" onClick={scrollToServices}>
+        {/* use "secondary" variant for better visibility on hero section */}
+        <Button size="lg" variant="secondary" onClick={scrollToServices}>
           {t('cta.secondary')}
         </Button>
       </ButtonGroup>

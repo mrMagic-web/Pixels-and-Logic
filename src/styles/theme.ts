@@ -15,6 +15,7 @@ export const theme = {
     backgroundAlt: '#C7FFED', // Teal light
     text: '#001542',        // Blue for headings
     textSecondary: '#7A7A7A', // Navy/gray for body
+    backgroundDark: '#172026',      // Dark gray for text
   },
   
   fonts: {

@@ -81,5 +81,23 @@
       },
       "link": "https://pattern-market.vercel.app/"
     }
+    ,
+    {
+      "name": "Szklarnia Sielska – Miejsce na Wydarzenia i Strona Online",
+      "description": "Szklarnia Sielska – Strona miejsca na wydarzenia\nNowoczesna aplikacja webowa do prezentacji i zarządzania miejscem na wydarzenia, w tym lista eventów, rezerwacje, galeria zdjęć oraz sklep online.",
+      "images": [
+        {
+          "url": "/projects/szklarnia.png",
+          "alt": "Szklarnia Sielska - Strona miejsca na wydarzenia"
+        }
+      ],
+      "technologies": ["Gatsby", "React", "Emotion", "TypeScript", "i18next", "PayU (integracja sklepu - placeholder)"],
+      "testimonial": {
+        "text": "",
+        "author": "",
+        "position": ""
+      },
+      "link": ""
+    }
   ]
 }

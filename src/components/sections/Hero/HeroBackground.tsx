@@ -1,45 +1,70 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from '@emotion/styled';
 import { theme } from '../../../styles/theme';
 
 const Background = styled.div`
   position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 60%;
-  height: 100%;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 1;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: ${theme.spacing[6]};
+  pointer-events: none;
+  background-color: ${theme.colors.backgroundDark};
 
   @media (max-width: ${theme.breakpoints.lg}) {
     display: none;
   }
 `;
 
-const AppMockup = styled.div`
-  width: 200px;
-  height: 400px;
+const MockupOverlay = styled.div`
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const AppMockup = styled.div<{ visible: boolean }>`
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  width: 320px;
+  min-width: 320px;
+  height: 550px;
+  max-width: 90vw;
+  max-height: 90vh;
   background: linear-gradient(135deg, ${theme.colors.white} 0%, ${theme.colors.background} 100%);
   border-radius: 25px;
   box-shadow: ${theme.shadows.xl};
   border: 6px solid ${theme.colors.primary};
   overflow: hidden;
-  animation: morph 8s ease-in-out infinite;
   position: relative;
 
+  opacity: ${props => (props.visible ? 1 : 0)};
+  pointer-events: ${props => (props.visible ? 'auto' : 'none')};
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+
   @media (max-width: ${theme.breakpoints.lg}) {
-    width: 160px;
-    height: 320px;
+    width: 320px;
+    min-width: 220px;
+    height: 500px;
+    max-width: 90vw;
+    max-height: 90vh;
   }
 
   @media (max-width: ${theme.breakpoints.md}) {
-    width: 130px;
-    height: 260px;
+    width: 220px;
+    min-width: 160px;
+    height: 350px;
+    max-width: 95vw;
+    max-height: 80vh;
   }
 
   &::before {
@@ -56,26 +81,38 @@ const AppMockup = styled.div`
   }
 `;
 
-const BrowserMockup = styled.div`
-  width: 300px;
-  height: 200px;
+const BrowserMockup = styled.div<{ visible: boolean }>`
+  position: absolute;
+  left: 25%;
+  top: 25%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  height: 320px;
+  max-width: 95vw;
+  max-height: 80vh;
   background: linear-gradient(135deg, ${theme.colors.white} 0%, ${theme.colors.background} 100%);
   border-radius: ${theme.borderRadius.lg};
   box-shadow: ${theme.shadows.xl};
   border: 2px solid ${theme.colors.primary};
   overflow: hidden;
-  animation: morph 8s ease-in-out infinite;
-  animation-delay: 2s;
   position: relative;
 
+  opacity: ${props => (props.visible ? 1 : 0)};
+  pointer-events: ${props => (props.visible ? 'auto' : 'none')};
+  transition: opacity 0.8s cubic-bezier(0.4,0,0.2,1);
+
   @media (max-width: ${theme.breakpoints.lg}) {
-    width: 240px;
-    height: 160px;
+    width: 320px;
+    height: 220px;
+    max-width: 90vw;
+    max-height: 60vh;
   }
 
   @media (max-width: ${theme.breakpoints.md}) {
     width: 200px;
-    height: 130px;
+    height: 120px;
+    max-width: 95vw;
+    max-height: 40vh;
   }
 
   &::before {
@@ -103,41 +140,7 @@ const BrowserMockup = styled.div`
   }
 `;
 
-const MockupContent = styled.div`
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: ${theme.spacing[3]};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-`;
 
-const BeforeState = styled.div`
-  position: absolute;
-  top: 20px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  padding: ${theme.spacing[3]};
-  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  opacity: 1;
-  animation: fadeBefore 8s ease-in-out infinite;
-
-  @keyframes fadeBefore {
-    0%, 40% { opacity: 1; }
-    60%, 100% { opacity: 0; }
-  }
-`;
 
 const AfterState = styled.div`
   position: absolute;
@@ -152,13 +155,6 @@ const AfterState = styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  opacity: 0;
-  animation: fadeAfter 8s ease-in-out infinite;
-
-  @keyframes fadeAfter {
-    0%, 40% { opacity: 0; }
-    60%, 100% { opacity: 1; }
-  }
 `;
 
 const MockupTitle = styled.h3`
@@ -185,7 +181,7 @@ const AppInterface = styled.div`
 const AppHeader = styled.div`
   width: 100%;
   height: 30px;
-  background: ${theme.colors.primary};
+  background: ${theme.colors.primaryDark || theme.colors.primary};
   border-radius: ${theme.borderRadius.sm} ${theme.borderRadius.sm} 0 0;
   display: flex;
   align-items: center;
@@ -300,59 +296,108 @@ const FloatingIcon = styled.div<{ delay: number }>`
 `;
 
 export const HeroBackground: React.FC = () => {
+  const [showApp, setShowApp] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowApp(prev => !prev);
+    }, 4000); // 4 seconds per mockup
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <Background>
-      <AppMockup>
-        <BeforeState>
-          <MockupTitle>Basic MVP</MockupTitle>
-          <MockupText>Just an idea, no users yet</MockupText>
-          <AppInterface>
-            <AppHeader>
-              <AppNav>
-                <NavItem />
-                <NavItem />
-              </AppNav>
-            </AppHeader>
-            <AppContent>
-              <AppCard />
-              <AppCard />
-            </AppContent>
-          </AppInterface>
-        </BeforeState>
-        <AfterState>
-          <MockupTitle>Scalable App</MockupTitle>
-          <MockupText>Full-featured, user-loved</MockupText>
-          <AppInterface>
-            <AppHeader>
-              <AppNav>
-                <NavItem />
-                <NavItem />
-                <NavItem />
-                <NavItem />
-              </AppNav>
-            </AppHeader>
-            <AppContent>
-              <AppCard />
-              <AppCard />
-              <AppCard />
-              <AppButton />
-            </AppContent>
-          </AppInterface>
-          <GrowthBadge>10x User Growth</GrowthBadge>
-        </AfterState>
-      </AppMockup>
+      <MockupOverlay>
+        <AppMockup visible={showApp} aria-hidden={!showApp}>
+          <AfterState>
+            <MockupTitle>Scalable App</MockupTitle>
+            <MockupText>Full-featured, user-loved</MockupText>
+            <AppInterface>
+              <AppHeader>
+                <AppNav>
+                  <NavItem />
+                  <NavItem />
+                  <NavItem />
+                  <NavItem />
+                  <NavItem />
+                  <NavItem />
+                </AppNav>
+              </AppHeader>
+              <AppContent>
+                <AppCard />
+                <AppCard />
+                <AppCard />
+                <AppCard />
+                <div className='app-columns' style={{ display: 'flex', width: '100%', gap: theme.spacing[2], marginTop: theme.spacing[2] }}>
+                  <div style={{ flex: 1, height: '50px', background: theme.colors.backgroundAlt }}>
+                    <div style={{ display: 'flex', gap: theme.spacing[2], marginTop: theme.spacing[2] }}>
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.primary }} />
+                      <div style={{ width: '16px', height: '16px', borderRadius: '50%', background: theme.colors.accent }} />
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.blue }} />
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.primary }} />
+                      <div style={{ width: '16px', height: '16px', borderRadius: '50%', background: theme.colors.accent }} />
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.blue }} />
 
-      <BrowserMockup>
-        <BeforeState>
-          <MockupTitle>Simple Web App</MockupTitle>
-          <MockupText>Basic functionality online</MockupText>
-        </BeforeState>
-        <AfterState>
-          <MockupTitle>Advanced Platform</MockupTitle>
-          <MockupText>Complex features, enterprise-ready</MockupText>
-          <GrowthBadge>5x Revenue Growth</GrowthBadge>
-        </AfterState>
-      </BrowserMockup>
+                    </div>
+                  </div>
+                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ width: '70%', height: '10px', background: theme.colors.textSecondary, marginBottom: theme.spacing[1] }} />
+                    <div style={{ width: '50%', height: '10px', background: theme.colors.textSecondary }} />
+                  </div>
+                </div>
+                <AppButton />
+              </AppContent>
+            </AppInterface>
+            <GrowthBadge>10x User Growth</GrowthBadge>
+          </AfterState>
+        </AppMockup>
+
+        <BrowserMockup visible={!showApp} aria-hidden={showApp}>
+          <AfterState>
+            <MockupTitle>Advanced Platform</MockupTitle>
+            <MockupText>Complex features, enterprise-ready</MockupText>
+            <AppInterface>
+              <AppHeader>
+                <AppNav>
+                  <NavItem />
+                  <NavItem />
+                  <NavItem />
+                  <NavItem />
+                  <NavItem />
+                  <NavItem />
+                </AppNav>
+              </AppHeader>
+              <AppContent>
+                <AppCard />
+                <AppCard />
+                <div className='app-columns' style={{ display: 'flex', width: '100%', gap: theme.spacing[2], marginTop: theme.spacing[2] }}>
+                  <div style={{ flex: 1, height: '50px', background: theme.colors.backgroundAlt }}>
+                    <div style={{ display: 'flex', gap: theme.spacing[2], marginTop: theme.spacing[2] }}>
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.primary }} />
+                      <div style={{ width: '16px', height: '16px', borderRadius: '50%', background: theme.colors.accent }} />
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.blue }} />
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.primary }} />
+                      <div style={{ width: '16px', height: '16px', borderRadius: '50%', background: theme.colors.accent }} />
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.blue }} />
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.primary }} />
+                      <div style={{ width: '16px', height: '16px', borderRadius: '50%', background: theme.colors.accent }} />
+                      <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: theme.colors.blue }} />
+
+                    </div>
+                  </div>
+                  <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                    <div style={{ width: '70%', height: '10px', background: theme.colors.textSecondary, marginBottom: theme.spacing[1] }} />
+                    <div style={{ width: '50%', height: '10px', background: theme.colors.textSecondary }} />
+                  </div>
+                </div>
+
+                <AppButton />
+              </AppContent>
+            </AppInterface>
+            <GrowthBadge>5x Revenue Growth</GrowthBadge>
+          </AfterState>
+        </BrowserMockup>
+      </MockupOverlay>
 
       <FloatingElements>
         <FloatingIcon delay={0}>📱</FloatingIcon>

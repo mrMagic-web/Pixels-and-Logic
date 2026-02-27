@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { theme } from '../../../styles/theme';
@@ -29,20 +29,43 @@ const PackagesGrid = styled.div`
   }
 `;
 
+// tab navigation
+const Tabs = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: ${theme.spacing[6]};
+  margin-bottom: ${theme.spacing[8]};
+`;
+
+const Tab = styled.button<{ active: boolean }>`
+  background: none;
+  border: none;
+  font-size: ${theme.fontSizes.lg};
+  font-weight: ${theme.fontWeights.semibold};
+  padding: ${theme.spacing[2]} ${theme.spacing[4]};
+  cursor: pointer;
+  color: ${({ active }) =>
+        active ? theme.colors.primary : theme.colors.textSecondary};
+  border-bottom: 2px solid
+    ${({ active }) => (active ? theme.colors.primary : 'transparent')};
+  transition: ${theme.transitions.base};
+
+  &:hover {
+    color: ${theme.colors.primary};
+  }
+`;
+
 export const MVPPackages: React.FC = () => {
     const { t } = useTranslation('mvp');
 
-    const packages = t('packages', { returnObjects: true }) as Array<{
-        badge: string;
-        name: string;
-        description: string;
-        price: string;
-        priceNote?: string;
-        duration: string;
-        pages: string;
-        cta: string;
-        features: string[];
-    }>;
+    // tabs correspond to translation keys under categories
+    const tabKeys: Array<'mvp' | 'websites' | 'saas'> = ['mvp', 'websites', 'saas'];
+    const [currentTab, setCurrentTab] = useState<'mvp' | 'websites' | 'saas'>('mvp');
+
+    const categoryData = t(`categories.${currentTab}`, { returnObjects: true }) as any;
+    const packages = categoryData?.packages || [];
+    const title = categoryData?.title;
+    const subtitle = categoryData?.subtitle;
 
     const handleSelectPackage = (packageName: string) => {
         const element = document.getElementById('contact');
@@ -52,13 +75,26 @@ export const MVPPackages: React.FC = () => {
     };
 
     return (
-        <Section id="mvp-packages" backgroundColor="#C7FFED">
+        <Section id="packages" backgroundColor="#C7FFED">
             <Container>
-                <SectionHeading title={t('title')} />
-                <Subtitle>{t('subtitle')}</Subtitle>
+                <SectionHeading title={title} />
+                {subtitle && <Subtitle>{subtitle}</Subtitle>}
+
+                {/* tabs */}
+                <Tabs>
+                    {tabKeys.map(key => (
+                        <Tab
+                            key={key}
+                            active={key === currentTab}
+                            onClick={() => setCurrentTab(key)}
+                        >
+                            {t(`tabs.${key}`)}
+                        </Tab>
+                    ))}
+                </Tabs>
 
                 <PackagesGrid>
-                    {packages.map((pkg, index) => (
+                    {packages.map((pkg: any, index: number) => (
                         <PackageCard
                             key={index}
                             badge={pkg.badge}
@@ -70,7 +106,7 @@ export const MVPPackages: React.FC = () => {
                             pages={pkg.pages}
                             features={pkg.features}
                             cta={pkg.cta}
-                            includedLabel={t('includedLabel')}
+                            includedLabel={categoryData?.includedLabel || t('includedLabel')}
                             isPopular={index === 1}
                             onSelect={() => handleSelectPackage(pkg.name)}
                         />
