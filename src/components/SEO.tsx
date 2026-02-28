@@ -28,8 +28,8 @@ export const SEO: React.FC<SEOProps> = ({
         ? 'Pixels & Logic - Tworzymy nowoczesne aplikacje webowe'
         : 'Pixels & Logic - Building Modern Web Applications';
     const defaultDescription = language === 'pl'
-        ? 'Softwarehouse specjalizujący się w aplikacjach webowych, integracjach systemowych i leasingu zespołów IT. 14 lat doświadczenia w sektorze enterprise.'
-        : 'Software house specializing in web applications, system integrations, and IT team leasing. 14 years of enterprise experience.';
+        ? 'Softwarehouse specjalizujący się w aplikacjach webowych, integracjach systemowych i leasingu zespołów IT. 15 lat doświadczenia w sektorze enterprise.'
+        : 'Software house specializing in web applications, system integrations, and IT team leasing. 15 years of enterprise experience.';
     const defaultImage = `${siteUrl}/og-image.jpg`;
 
     const seo = {
