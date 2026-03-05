@@ -7,8 +7,7 @@
   },
   "navigation": {
     "services": "Oferta",
-    "packages": "Pakiety",
-    "contact": "Kontakt",
+    "packages": "Pakiety",    "blog": "Blog",    "contact": "Kontakt",
     "mvp": "MVP w 5 dni",
     "whyUs": "Dlaczego my",
     "technologies": "Technologie"

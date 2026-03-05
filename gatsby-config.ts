@@ -98,6 +98,14 @@ const config: GatsbyConfig = {
       __key: "locale"
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "blog",
+        path: "./content/blog/"
+      },
+      __key: "blog"
+    },
+    {
       resolve: 'gatsby-plugin-react-i18next',
       options: {
         localeJsonSourceName: 'locale',

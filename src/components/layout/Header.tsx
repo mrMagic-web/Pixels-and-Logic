@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
-import { Link, useI18next, useTranslation } from 'gatsby-plugin-react-i18next';
+import { navigate } from 'gatsby';
+import { Link, useI18next } from 'gatsby-plugin-react-i18next';
 import { theme } from '../../styles/theme';
 import { Container } from '../ui/Container';
 import { LanguageToggle } from '../ui/LanguageToggle';
@@ -84,7 +85,7 @@ const NavLink = styled.a<{ isScrolled: boolean }>`
 
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const { t } = useTranslation('common');
+  const { t, language } = useI18next();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -100,6 +101,9 @@ export const Header: React.FC = () => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const home = language === 'pl' ? `/pl/#${id}` : `/#${id}`;
+      navigate(home);
     }
   };
 
@@ -123,6 +127,9 @@ export const Header: React.FC = () => {
               </NavLink>
               <NavLink isScrolled={isScrolled} href="#contact" onClick={scrollToSection('contact')}>
                 {t('navigation.contact')}
+              </NavLink>
+              <NavLink isScrolled={isScrolled} as={Link} to="/blog">
+                {t('navigation.blog', 'Blog')}
               </NavLink>
             </MainNavLinks>
             <Button as="a" href="#packages" onClick={scrollToSection('packages')} size="sm">
