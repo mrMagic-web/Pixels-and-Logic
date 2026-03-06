@@ -6,6 +6,7 @@ import { Section } from '../../ui/Section';
 import { Container } from '../../ui/Container';
 import { SectionHeading } from '../../ui/SectionHeading';
 import { ProjectCard } from './ProjectCard';
+import { TestimonialsSlider } from './TestimonialsSlider';
 
 const Subtitle = styled.p`
   text-align: center;
@@ -19,12 +20,18 @@ const Subtitle = styled.p`
 
 const ProjectsGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* 4 columns on wide screens */
+  grid-template-columns: repeat(4, 1fr);
   gap: ${theme.spacing[8]};
   
+  /* two columns at large breakpoint */
   @media (max-width: ${theme.breakpoints.lg}) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* single column on medium and smaller devices */
+  @media (max-width: ${theme.breakpoints.md}) {
     grid-template-columns: 1fr;
-    gap: ${theme.spacing[8]};
   }
 `;
 
@@ -66,6 +73,15 @@ export const Projects: React.FC = () => {
                         />
                     ))}
                 </ProjectsGrid>
+
+                {/* testimonials slider uses all projects that have a non-empty testimonial */}
+                <TestimonialsSlider
+                    testimonials={projects
+                        .map((p) => p.testimonial)
+                        .filter((t): t is { text: string; author: string; position?: string } =>
+                            !!t && t.text && t.text.trim().length > 0
+                        )}
+                />
             </Container>
         </Section>
     );

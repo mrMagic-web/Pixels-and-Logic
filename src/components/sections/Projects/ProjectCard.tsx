@@ -220,7 +220,14 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
                 )} */}
 
         <ButtonWrapper>
-          <Button as="a" href={link} size="lg" fullWidth>
+          <Button
+            as="a"
+            href={link}
+            size="lg"
+            fullWidth
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {cta}
           </Button>
         </ButtonWrapper>

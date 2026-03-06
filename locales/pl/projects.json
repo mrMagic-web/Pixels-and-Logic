@@ -93,11 +93,11 @@
       ],
       "technologies": ["Gatsby", "React", "Emotion", "TypeScript", "i18next", "PayU (integracja sklepu - placeholder)"],
       "testimonial": {
-        "text": "",
-        "author": "",
-        "position": ""
+        "text": "Współpraca z Pixels & Logic nad stroną Szklarnia Sielska była czystą przyjemnością. Od pierwszego spotkania Iryna wykazała się głębokim zrozumieniem naszej wizji. Finalny produkt przerósł oczekiwania – jest piękny, funkcjonalny i responsywny. Komunikacja przebiegała płynnie, zmiany wprowadzane były szybko, a cały proces miał osobisty i profesjonalny charakter. Iryna z wielką troską i kreatywnością oddała charakter naszej szklarni w wersji online. Z całego serca polecam.",
+        "author": "Iryna Selska",
+        "position": "Założycielka, Szklarnia Sielska"
       },
-      "link": ""
+      "link": "http://szklarniasielska.eu/"
     }
   ]
 }

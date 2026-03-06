@@ -65,8 +65,8 @@ export const mixins = {
 
   // Section spacing
   section: `
-    padding-top: ${theme.spacing[24]};
-    padding-bottom: ${theme.spacing[24]};
+    padding-top: ${theme.spacing[12]};
+    padding-bottom: ${theme.spacing[12]};
     
     @media (max-width: ${theme.breakpoints.md}) {
       padding-top: ${theme.spacing[16]};
