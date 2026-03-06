@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "postinstall": "pnpm exec sharp --rebuild=make"
+    "postinstall": "pnpm rebuild sharp || true"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

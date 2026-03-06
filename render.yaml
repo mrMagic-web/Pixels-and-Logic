@@ -2,7 +2,10 @@ services:
   - type: web
     name: pixel-logic-website
     runtime: static
-    buildCommand: npm install && npm run build
+    buildCommand: |
+      pnpm install
+      pnpm rebuild sharp --platform=linux --arch=x64 --verbose || true
+      pnpm run build
     staticPublishPath: public
     envVars:
       - key: NODE_VERSION
