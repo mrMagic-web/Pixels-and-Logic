@@ -100,7 +100,9 @@ export const Header: React.FC = () => {
     e.preventDefault();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const yOffset = -40;
+      const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     } else {
       const home = language === 'pl' ? `/pl/#${id}` : `/#${id}`;
       navigate(home);

@@ -28,11 +28,10 @@ const IndexPage: React.FC<PageProps> = () => {
 
 export default IndexPage;
 
-export const Head: HeadFC<Queries.IndexPageQuery> = ({ data }) => {
+export const Head: HeadFC<any> = ({ data }) => {
   const { language } = useI18next();
 
-  // Get SEO data from translations
-  const seoData = data?.locales?.edges?.find(edge => edge.node.ns === 'common');
+  const seoData = data?.locales?.edges?.find((edge: any) => edge.node.ns === 'common');
   const translations = seoData ? JSON.parse(seoData.node.data) : {};
 
   const title = translations?.seo?.title || (language === 'pl'

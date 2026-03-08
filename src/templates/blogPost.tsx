@@ -89,9 +89,13 @@ interface BlogPostProps {
   data: {
     markdownRemark: {
       html: string;
+      fields: {
+        slug: string;
+      };
       frontmatter: {
         title: string;
         date: string;
+        description?: string;
       };
     };
   };
@@ -117,6 +121,68 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
   );
 };
 
+export const Head: React.FC<BlogPostProps> = ({ data }) => {
+  const post = data.markdownRemark;
+  const siteUrl = 'https://pixelsandlogic.eu';
+  const slug = post.fields?.slug || '';
+  const postUrl = `${siteUrl}${slug}`;
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.frontmatter.title,
+    description: post.frontmatter.description || '',
+    datePublished: post.frontmatter.date,
+    author: {
+      '@type': 'Person',
+      name: 'Maciej',
+      url: siteUrl
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Pixels & Logic',
+      url: siteUrl,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${siteUrl}/logo/logo.svg`
+      }
+    },
+    url: postUrl,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl
+    }
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: siteUrl },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: `${siteUrl}/blog` },
+      { '@type': 'ListItem', position: 3, name: post.frontmatter.title, item: postUrl }
+    ]
+  };
+
+  return (
+    <>
+      <title>{`${post.frontmatter.title} | Pixels & Logic Blog`}</title>
+      <meta name="description" content={post.frontmatter.description || ''} />
+      <link rel="canonical" href={postUrl} />
+      <meta property="og:type" content="article" />
+      <meta property="og:title" content={`${post.frontmatter.title} | Pixels & Logic Blog`} />
+      <meta property="og:description" content={post.frontmatter.description || ''} />
+      <meta property="og:url" content={postUrl} />
+      <meta property="og:site_name" content="Pixels & Logic" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={`${post.frontmatter.title} | Pixels & Logic Blog`} />
+      <meta name="twitter:description" content={post.frontmatter.description || ''} />
+      <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+      <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+    </>
+  );
+};
+
 export const query = graphql`
   query BlogPostBySlug($slug: String!, $language: String!) {
     locales: allLocale(filter: { language: { eq: $language } }) {
@@ -130,9 +196,13 @@ export const query = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       html
+      fields {
+        slug
+      }
       frontmatter {
         title
         date
+        description
       }
     }
   }

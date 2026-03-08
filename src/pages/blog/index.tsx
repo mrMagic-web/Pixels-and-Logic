@@ -75,41 +75,41 @@ const ReadMore = styled.span`
 `;
 
 interface BlogIndexProps {
-    data: {
-        allMarkdownRemark: {
-            nodes: {
-                fields: { slug: string };
-                frontmatter: { title: string; date: string };
-            }[];
-        };
+  data: {
+    allMarkdownRemark: {
+      nodes: {
+        fields: { slug: string };
+        frontmatter: { title: string; date: string };
+      }[];
     };
+  };
 }
 
 const BlogIndex: React.FC<BlogIndexProps> = ({ data }) => {
-    const posts = data.allMarkdownRemark.nodes;
-    return (
-        <Layout>
-            <PageHeader>
-                <Container>
-                    <PageTitle>Blog</PageTitle>
-                    <PageSubtitle>Insights on programming, AI, SaaS and building online products.</PageSubtitle>
-                </Container>
-            </PageHeader>
-            <PostsSection>
-                <Container>
-                    <PostsGrid>
-                        {posts.map(post => (
-                            <PostCard key={post.fields.slug} to={post.fields.slug}>
-                                <PostDate>{post.frontmatter.date}</PostDate>
-                                <PostTitle>{post.frontmatter.title}</PostTitle>
-                                <ReadMore>Read article →</ReadMore>
-                            </PostCard>
-                        ))}
-                    </PostsGrid>
-                </Container>
-            </PostsSection>
-        </Layout>
-    );
+  const posts = data.allMarkdownRemark.nodes;
+  return (
+    <Layout>
+      <PageHeader>
+        <Container>
+          <PageTitle>Blog</PageTitle>
+          <PageSubtitle>Insights on programming, AI, SaaS and building online products.</PageSubtitle>
+        </Container>
+      </PageHeader>
+      <PostsSection>
+        <Container>
+          <PostsGrid>
+            {posts.map(post => (
+              <PostCard key={post.fields.slug} to={post.fields.slug}>
+                <PostDate>{post.frontmatter.date}</PostDate>
+                <PostTitle>{post.frontmatter.title}</PostTitle>
+                <ReadMore>Read article →</ReadMore>
+              </PostCard>
+            ))}
+          </PostsGrid>
+        </Container>
+      </PostsSection>
+    </Layout>
+  );
 };
 
 export const query = graphql`
@@ -138,3 +138,19 @@ export const query = graphql`
 `;
 
 export default BlogIndex;
+
+export const Head: React.FC = () => (
+  <>
+    <title>Blog | Pixels & Logic</title>
+    <meta name="description" content="Insights on programming, AI, SaaS and building online products." />
+    <link rel="canonical" href="https://pixelsandlogic.eu/blog" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Blog | Pixels & Logic" />
+    <meta property="og:description" content="Insights on programming, AI, SaaS and building online products." />
+    <meta property="og:url" content="https://pixelsandlogic.eu/blog" />
+    <meta property="og:site_name" content="Pixels & Logic" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Blog | Pixels & Logic" />
+    <meta name="twitter:description" content="Insights on programming, AI, SaaS and building online products." />
+  </>
+);
