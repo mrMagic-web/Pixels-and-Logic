@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "postinstall": "pnpm rebuild sharp || true"
+    "postinstall": "node -e \"if (process.platform === 'linux') { process.env.npm_config_platform = 'linux'; process.env.npm_config_arch = 'x64'; }\" && pnpm rebuild sharp || true"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
