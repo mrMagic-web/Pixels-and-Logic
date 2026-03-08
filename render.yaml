@@ -3,6 +3,7 @@ services:
     name: pixel-logic-website
     runtime: static
     buildCommand: |
+      # ensure we get linux/x64 binaries (sharp, etc.)
       npm_config_platform=linux npm_config_arch=x64 pnpm install --frozen-lockfile
       pnpm rebuild sharp --platform=linux --arch=x64 --verbose || true
       pnpm run build
