@@ -14,7 +14,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "postinstall": "node -e \"if (process.platform === 'linux') { process.env.npm_config_platform = 'linux'; process.env.npm_config_arch = 'x64'; }\" && pnpm rebuild sharp || true"
+    "postinstall": "node -e \"if (process.platform === 'linux') { process.env.npm_config_platform = 'linux'; process.env.npm_config_arch = 'x64'; }\" && npm rebuild sharp || true"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -32,19 +32,15 @@
     "gatsby-source-filesystem": "^5.16.0",
     "gatsby-transformer-remark": "^6.16.0",
     "gatsby-transformer-sharp": "^5.16.0",
-    "i18next": "^25.8.14",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-i18next": "^16.5.6",
-    "sharp": "0.34.5"
-  },
-  "resolutions": {
-    "sharp": "0.32.5"
+    "i18next": "^22.5.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-i18next": "^12.3.1"
   },
   "devDependencies": {
     "@types/node": "^25.3.5",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
     "typescript": "^5.9.3"
   }
 }
