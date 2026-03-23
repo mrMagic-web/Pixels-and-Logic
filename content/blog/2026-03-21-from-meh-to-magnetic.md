@@ -1,6 +1,6 @@
 ---
 title: "From Meh to Magnetic: I Redesigned My SaaS Sales Page in 5 Prompts Using Google’s Stitch AI (Figma vs Stitch)"
-date: "2026-03-05"
+date: "2026-03-21"
 description: "I hated my old Plannero sales page. 5 prompts with Google Stitch AI later… here’s the full breakdown (Figma comparison included).."
 ---
 
