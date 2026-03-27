@@ -2,6 +2,7 @@
 title: "Is SaaS Doomed in the Age of AI? Not Quite."
 date: "2026-02-27"
 description: "Why AI won't kill SaaS — it will augment it."
+youtubeUrl: "https://www.youtube.com/watch?v=8ZmqaNendPs"
 ---
 
 Lately, the narrative that AI agents will fully replace SaaS (Software as a Service) has gained traction. Headlines suggest that generative AI's speed in building code and automating tasks spells the end for subscription-based tools. As someone actively building SaaS products with AI assistance, I see real strengths in AI—but also clear limitations that make the "SaaS is dead" claim overstated.

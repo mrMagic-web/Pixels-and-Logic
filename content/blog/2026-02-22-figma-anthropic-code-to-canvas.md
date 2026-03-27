@@ -2,6 +2,8 @@
 title: "Exciting News: Figma + Anthropic Code to Canvas Could Supercharge Solo SaaS Builders"
 date: "2026-02-22"
 description: "Figma's new Code to Canvas feature with Anthropic could transform how solo builders prototype and polish UIs."
+youtubeUrl: "https://www.youtube.com/watch?v=aT8gzL15xjk"
+
 ---
 
 I recently came across the announcement of Figma's partnership with Anthropic (the team behind Claude), and it got me genuinely excited—especially as someone who loves blending code and design in my own projects.

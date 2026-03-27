@@ -2,6 +2,7 @@
 title: "The Best Way to Learn Programming? Build Real Projects – My Small Survey Confirms It"
 date: "2026-02-06"
 description: "Survey shows building real projects beats tutorials for learning code."
+youtubeUrl: "https://www.youtube.com/watch?v=zF3vMf1V-vE"
 ---
 
 A quick poll on my YouTube channel asked: What's the most effective way to learn programming? The clear winner? Building real projects—hands down.

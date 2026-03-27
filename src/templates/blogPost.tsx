@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import styled from '@emotion/styled';
 import { Layout } from '../components/layout/Layout';
 import { Container } from '../components/ui/Container';
+import { Contact } from '../components/sections/Contact/Contact';
 import { theme } from '../styles/theme';
 import { mixins } from '../styles/mixins';
 
@@ -44,6 +45,75 @@ const PostMeta = styled.p`
 const PostBody = styled.section`
   ${mixins.section};
   background-color: ${theme.colors.background};
+`;
+
+const PostBodyInner = styled.div<{ hasVideo: boolean }>`
+  display: grid;
+  grid-template-columns: ${({ hasVideo }) => hasVideo ? '1fr 380px' : '1fr'};
+  gap: ${theme.spacing[12]};
+  align-items: start;
+
+  @media (max-width: ${theme.breakpoints.lg}) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const VideoSidebar = styled.aside`
+  position: sticky;
+  top: ${theme.spacing[8]};
+`;
+
+const VideoLabel = styled.p`
+  font-size: ${theme.fontSizes.sm};
+  font-weight: ${theme.fontWeights.semibold};
+  color: ${theme.colors.textSecondary};
+  margin-bottom: ${theme.spacing[3]};
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+`;
+
+const VideoEmbed = styled.div`
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: ${theme.borderRadius.lg};
+  box-shadow: ${theme.shadows.md};
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+`;
+
+const BlogCtaBanner = styled.section`
+  background-color: ${theme.colors.backgroundDark};
+  padding: ${theme.spacing[16]} 0;
+  text-align: center;
+`;
+
+const BlogCtaTitle = styled.h2`
+  font-family: ${theme.fonts.heading};
+  font-size: ${theme.fontSizes['3xl']};
+  font-weight: ${theme.fontWeights.bold};
+  color: ${theme.colors.accent};
+  margin-bottom: ${theme.spacing[4]};
+
+  @media (max-width: ${theme.breakpoints.md}) {
+    font-size: ${theme.fontSizes['2xl']};
+  }
+`;
+
+const BlogCtaText = styled.p`
+  font-size: ${theme.fontSizes.lg};
+  color: ${theme.colors.white};
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0.9;
 `;
 
 const Prose = styled.div`
@@ -96,6 +166,7 @@ interface BlogPostProps {
         title: string;
         date: string;
         description?: string;
+        youtubeUrl?: string;
       };
     };
   };
@@ -103,6 +174,15 @@ interface BlogPostProps {
 
 const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
   const post = data.markdownRemark;
+
+  const getYoutubeEmbedUrl = (url?: string) => {
+    if (!url) return null;
+    const match = url.match(/(?:v=|youtu\.be\/)([\w-]{11})/);
+    return match ? `https://www.youtube.com/embed/${match[1]}` : null;
+  };
+
+  const embedUrl = getYoutubeEmbedUrl(post.frontmatter.youtubeUrl);
+
   return (
     <Layout>
       <PostHeader>
@@ -114,9 +194,35 @@ const BlogPost: React.FC<BlogPostProps> = ({ data }) => {
       </PostHeader>
       <PostBody>
         <Container>
-          <Prose dangerouslySetInnerHTML={{ __html: post.html }} />
+          <PostBodyInner hasVideo={!!embedUrl}>
+            <Prose dangerouslySetInnerHTML={{ __html: post.html }} />
+            {embedUrl && (
+              <VideoSidebar>
+                <VideoLabel>Watch the video</VideoLabel>
+                <VideoEmbed>
+                  <iframe
+                    src={embedUrl}
+                    title={post.frontmatter.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  />
+                </VideoEmbed>
+              </VideoSidebar>
+            )}
+          </PostBodyInner>
         </Container>
       </PostBody>
+
+      <BlogCtaBanner>
+        <Container>
+          <BlogCtaTitle>Got a project in mind?</BlogCtaTitle>
+          <BlogCtaText>
+            We build MVPs, websites, and SaaS platforms — fast. If something you read here sparked an idea, let's talk. No obligation, just a quick chat.
+          </BlogCtaText>
+        </Container>
+      </BlogCtaBanner>
+
+      <Contact />
     </Layout>
   );
 };
@@ -184,7 +290,7 @@ export const Head: React.FC<BlogPostProps> = ({ data }) => {
 };
 
 export const query = graphql`
-  query BlogPostBySlug($slug: String!, $language: String!) {
+  query BlogPostBySlug($slug: String!, $language: String) {
     locales: allLocale(filter: { language: { eq: $language } }) {
       edges {
         node {
@@ -203,6 +309,7 @@ export const query = graphql`
         title
         date
         description
+        youtubeUrl
       }
     }
   }

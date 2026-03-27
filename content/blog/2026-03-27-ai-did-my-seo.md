@@ -2,6 +2,7 @@
 title: "AI Just Did My Least Favorite Job: SEO Optimization in Minutes"
 date: "2026-03-27"
 description: "I've always hated doing SEO. So I let my AI Copilot handle a full SEO audit and implementation on my new website — and the results were surprisingly good."
+youtubeUrl: "https://www.youtube.com/watch?v=1LE2DUUsN3Y"
 ---
 
 I've always hated doing SEO. As a web and app developer, writing meta tags, optimizing images, adding Twitter cards, and remembering to create a robots.txt file feels like tedious busywork. I'd usually do the bare minimum — maybe a title tag and a description — and skip the rest unless a client specifically asked for it.
