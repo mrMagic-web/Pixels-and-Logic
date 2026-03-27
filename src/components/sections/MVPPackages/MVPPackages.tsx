@@ -68,6 +68,7 @@ export const MVPPackages: React.FC = () => {
     const subtitle = categoryData?.subtitle;
 
     const handleSelectPackage = (packageName: string) => {
+        window.dispatchEvent(new CustomEvent('packageSelected', { detail: packageName }));
         const element = document.getElementById('contact');
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });

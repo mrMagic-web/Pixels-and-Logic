@@ -11,22 +11,14 @@ const Content = styled.div`
 
 const Headline = styled.h1`
   font-size: ${theme.fontSizes['5xl']};
-  color: ${theme.colors.primary};
+  color: ${theme.colors.accent};
   margin-bottom: ${theme.spacing[6]};
   line-height: 1.4;
-  max-width: 500px;
-  
-  span {
-    background-color: ${theme.colors.white};
-    padding: ${theme.spacing[1]} ${theme.spacing[4]};
-    border-radius: ${theme.borderRadius.md};
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
+  max-width: 600px;
   
   @media (max-width: ${theme.breakpoints.lg}) {
     font-size: ${theme.fontSizes['5xl']};
-    max-width: 400px;
+    max-width: 450px;
   }
   
   @media (max-width: ${theme.breakpoints.md}) {
@@ -37,17 +29,10 @@ const Headline = styled.h1`
 
 const Subtitle = styled.p`
   font-size: ${theme.fontSizes.xl};
-  color: ${theme.colors.textSecondary};
+  color: ${theme.colors.white};
   margin-bottom: ${theme.spacing[8]};
   max-width: 600px;
   
-  span {
-    background-color: ${theme.colors.white};
-    padding: ${theme.spacing[1]} ${theme.spacing[4]};
-    border-radius: ${theme.borderRadius.sm};
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-  }
   
   @media (max-width: ${theme.breakpoints.md}) {
     font-size: ${theme.fontSizes.lg};
@@ -65,13 +50,6 @@ export const HeroContent: React.FC = () => {
 
   const scrollToContact = () => {
     const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const scrollToServices = () => {
-    const element = document.getElementById('services');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }

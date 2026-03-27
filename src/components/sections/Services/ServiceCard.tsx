@@ -4,10 +4,10 @@ import { theme } from '../../../styles/theme';
 import { Card } from '../../ui/Card';
 
 interface ServiceCardProps {
-    title: string;
-    description: string;
-    cta: string;
-    icon: React.ReactNode;
+  title: string;
+  description: string;
+  cta: string;
+  icon: React.ReactNode;
 }
 
 const StyledCard = styled(Card)`
@@ -22,10 +22,9 @@ const IconWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, ${theme.colors.accent} 0%, ${theme.colors.yellow} 100%);
+  background-color: ${theme.colors.mustard};
   border-radius: ${theme.borderRadius.lg};
-  color: ${theme.colors.primary};
-  font-size: 32px;
+  color: ${theme.colors.white};
 `;
 
 const Title = styled.h3`
@@ -58,19 +57,19 @@ const CtaLink = styled.a`
 `;
 
 export const ServiceCard: React.FC<ServiceCardProps> = ({
-    title,
-    description,
-    cta,
-    icon
+  title,
+  description,
+  cta,
+  icon
 }) => {
-    return (
-        <StyledCard>
-            <IconWrapper>{icon}</IconWrapper>
-            <div>
-                <Title>{title}</Title>
-                <Description>{description}</Description>
-            </div>
-            <CtaLink href="#contact">{cta}</CtaLink>
-        </StyledCard>
-    );
+  return (
+    <StyledCard>
+      <IconWrapper>{icon}</IconWrapper>
+      <div>
+        <Title>{title}</Title>
+        <Description>{description}</Description>
+      </div>
+      <CtaLink href="#contact">{cta}</CtaLink>
+    </StyledCard>
+  );
 };

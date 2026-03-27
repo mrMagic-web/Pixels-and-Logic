@@ -21,7 +21,29 @@ const ReasonsGrid = styled.div`
   }
 `;
 
-const reasonIcons = ['🏆', '🚀', '💡', '⚡'];
+const reasonIcons: React.ReactNode[] = [
+    // Trophy — 15 years of experience
+    <svg key="trophy" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M7 4h10l-1 6a5 5 0 0 1-8 0L7 4z" />
+        <path d="M5 4H3v2a4 4 0 0 0 4 4" />
+        <path d="M19 4h2v2a4 4 0 0 1-4 4" />
+        <path d="M12 14v4M8 18h8" />
+    </svg>,
+    // Building — enterprise experience
+    <svg key="building" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="2" width="18" height="20" rx="1" />
+        <path d="M9 22V12h6v10" />
+        <path d="M8 7h.01M12 7h.01M16 7h.01M8 11h.01M16 11h.01" />
+    </svg>,
+    // Lightbulb — product approach
+    <svg key="lightbulb" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 18h6M10 22h4M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z" />
+    </svg>,
+    // Zap — fast decisions
+    <svg key="zap" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+    </svg>,
+];
 
 export const WhyUs: React.FC = () => {
     const { t } = useTranslation('whyus');

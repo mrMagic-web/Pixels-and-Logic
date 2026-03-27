@@ -1,0 +1,67 @@
+{
+  "title": "Websites",
+  "subtitle": "Beautiful, fast websites that convert visitors into customers",
+  "hero": {
+    "title": "Websites That Work as Hard as You Do",
+    "description": "We create stunning websites that not only look amazing but actually drive results. From landing pages to full e-commerce sites, we build digital experiences that turn visitors into loyal customers.",
+    "cta": "Build My Website"
+  },
+  "whatWeBuild": {
+    "title": "What Kind of Websites Do We Build?",
+    "types": [
+      {
+        "title": "Business Websites",
+        "description": "Professional online presence for companies of all sizes. Showcase your services, tell your story, and make it easy for customers to contact you."
+      },
+      {
+        "title": "E-commerce Stores",
+        "description": "Full-featured online shops with secure payments, inventory management, and everything you need to sell online successfully."
+      },
+      {
+        "title": "Landing Pages",
+        "description": "High-converting single-page websites designed to turn visitors into leads or customers with clear calls-to-action."
+      },
+      {
+        "title": "Portfolio Sites",
+        "description": "Showcase your work beautifully. Perfect for freelancers, agencies, and creative professionals."
+      }
+    ]
+  },
+  "features": {
+    "title": "What Makes Our Websites Special?",
+    "list": [
+      "Lightning-fast loading speeds",
+      "Mobile-friendly responsive design",
+      "SEO optimized for search engines",
+      "Secure and reliable hosting",
+      "Easy-to-use content management",
+      "Analytics and tracking built-in"
+    ]
+  },
+  "process": {
+    "title": "How We Build Your Website",
+    "steps": [
+      {
+        "title": "Strategy & Planning",
+        "description": "We understand your goals, target audience, and what success looks like for your website."
+      },
+      {
+        "title": "Design & Development",
+        "description": "Beautiful design meets powerful functionality. We code everything from scratch for optimal performance."
+      },
+      {
+        "title": "Testing & Launch",
+        "description": "Rigorous testing ensures everything works perfectly before we launch your site live."
+      },
+      {
+        "title": "Support & Growth",
+        "description": "Ongoing maintenance and optimization to keep your website performing at its best."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready for a Website That Works?",
+    "description": "Let's create a website that drives results for your business. Get started with a free consultation.",
+    "button": "Start Building"
+  }
+}

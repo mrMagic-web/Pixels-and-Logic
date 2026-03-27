@@ -1,0 +1,88 @@
+{
+  "title": "MVP & Prototypes",
+  "subtitle": "Turn your idea into a working product fast",
+  "hero": {
+    "title": "From Idea to MVP in Record Time",
+    "description": "We build minimum viable products and prototypes that validate your business concept quickly and cost-effectively. No more endless planning – get something real users can test and love.",
+    "cta": "Start Your MVP"
+  },
+  "whatIs": {
+    "title": "What is an MVP?",
+    "description": "An MVP (Minimum Viable Product) is the simplest version of your product that lets you test your idea with real users. It's not a full-featured app – it's a smart starting point that proves your concept works.",
+    "benefits": [
+      "Validate your idea before investing millions",
+      "Get user feedback early in the process",
+      "Attract investors with a working prototype",
+      "Learn what features actually matter to customers"
+    ]
+  },
+  "process": {
+    "title": "Our MVP Process",
+    "steps": [
+      {
+        "title": "Discovery & Planning",
+        "description": "We dive deep into your idea, understand your users, and map out the core features that matter most."
+      },
+      {
+        "title": "Design & Prototype",
+        "description": "Quick wireframes and mockups help you visualize the product before we start coding."
+      },
+      {
+        "title": "Build & Test",
+        "description": "We develop the essential features and rigorously test them to ensure everything works smoothly."
+      },
+      {
+        "title": "Launch & Learn",
+        "description": "Get your MVP in front of users and gather feedback to guide your next steps."
+      }
+    ]
+  },
+  "whatWeBuild": {
+    "title": "What Kind of MVPs Do We Build?",
+    "types": [
+      {
+        "title": "Web Applications",
+        "description": "Browser-based tools and platforms your customers can use from day one without installing anything."
+      },
+      {
+        "title": "Mobile Apps",
+        "description": "iOS and Android prototypes that put your product in users' hands and generate real feedback fast."
+      },
+      {
+        "title": "SaaS Products",
+        "description": "Multi-user platforms with accounts, subscriptions, and core workflow automation built in from the start."
+      },
+      {
+        "title": "Marketplaces & Portals",
+        "description": "Two-sided platforms connecting buyers and sellers, or portals that streamline your internal operations."
+      }
+    ]
+  },
+  "features": {
+    "title": "What's Included in Every MVP",
+    "list": [
+      "User authentication and account management",
+      "Core user flows — no bloat, no distractions",
+      "Mobile-responsive design out of the box",
+      "Basic analytics and event tracking",
+      "Essential third-party integrations (payments, email, etc.)",
+      "Deployment on scalable cloud infrastructure",
+      "Source code ownership — it's yours from day one"
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us for Your MVP?",
+    "points": [
+      "15+ years of experience building MVPs that succeed",
+      "Fast turnaround – from idea to launch in weeks",
+      "Focus on what matters – we cut the fluff",
+      "Transparent pricing with no hidden costs",
+      "Ongoing support after launch"
+    ]
+  },
+  "cta": {
+    "title": "Ready to Build Your MVP?",
+    "description": "Let's turn your idea into reality. Contact us today for a free consultation.",
+    "button": "Get Started"
+  }
+}

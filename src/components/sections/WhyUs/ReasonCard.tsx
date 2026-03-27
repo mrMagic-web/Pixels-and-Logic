@@ -3,9 +3,9 @@ import styled from '@emotion/styled';
 import { theme } from '../../../styles/theme';
 
 interface ReasonCardProps {
-    title: string;
-    description: string;
-    icon: string;
+  title: string;
+  description: string;
+  icon: React.ReactNode;
 }
 
 const CardWrapper = styled.div`
@@ -26,14 +26,13 @@ const CardWrapper = styled.div`
 `;
 
 const IconWrapper = styled.div`
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, ${theme.colors.teal} 0%, ${theme.colors.backgroundAlt} 100%);
+  background-color: ${theme.colors.accent};
   border-radius: 50%;
-  font-size: 40px;
   margin-bottom: ${theme.spacing[4]};
 `;
 
@@ -49,15 +48,15 @@ const Description = styled.p`
 `;
 
 export const ReasonCard: React.FC<ReasonCardProps> = ({
-    title,
-    description,
-    icon
+  title,
+  description,
+  icon
 }) => {
-    return (
-        <CardWrapper>
-            <IconWrapper>{icon}</IconWrapper>
-            <Title>{title}</Title>
-            <Description>{description}</Description>
-        </CardWrapper>
-    );
+  return (
+    <CardWrapper>
+      <IconWrapper>{icon}</IconWrapper>
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+    </CardWrapper>
+  );
 };

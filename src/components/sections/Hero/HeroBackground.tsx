@@ -16,9 +16,7 @@ const Background = styled.div`
   pointer-events: none;
   background-color: ${theme.colors.backgroundDark};
 
-  @media (max-width: ${theme.breakpoints.lg}) {
-    display: none;
-  }
+
 `;
 
 const MockupOverlay = styled.div`

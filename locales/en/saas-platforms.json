@@ -1,0 +1,79 @@
+{
+  "title": "SaaS & Platforms",
+  "subtitle": "Scalable software solutions that grow with your business",
+  "hero": {
+    "title": "Software as a Service That Scales",
+    "description": "We build powerful SaaS platforms and web applications that serve thousands of users. From subscription-based tools to complex enterprise platforms, we create software that scales with your success.",
+    "cta": "Build My Platform"
+  },
+  "whatIsSaas": {
+    "title": "What is SaaS?",
+    "description": "Software as a Service (SaaS) is cloud-based software that users access via the internet. Instead of buying and installing software on individual computers, users subscribe to the service and access it through a web browser.",
+    "benefits": [
+      "Accessible from anywhere with internet",
+      "Automatic updates and maintenance",
+      "Pay only for what you use",
+      "Scales easily as your business grows",
+      "No hardware or software installation required"
+    ]
+  },
+  "platformsWeBuild": {
+    "title": "Types of Platforms We Create",
+    "types": [
+      {
+        "title": "Business Tools",
+        "description": "Custom software for internal business processes – project management, CRM, inventory, analytics, and more."
+      },
+      {
+        "title": "Marketplaces",
+        "description": "Connect buyers and sellers with secure transaction processing, user management, and marketplace features."
+      },
+      {
+        "title": "Subscription Services",
+        "description": "Recurring revenue models with user accounts, billing integration, and subscription management."
+      },
+      {
+        "title": "Enterprise Applications",
+        "description": "Complex software solutions for large organizations with advanced features and integrations."
+      }
+    ]
+  },
+  "features": {
+    "title": "Platform Features We Include",
+    "list": [
+      "User authentication and security",
+      "Payment processing and billing",
+      "Real-time notifications",
+      "Data analytics and reporting",
+      "API integrations",
+      "Multi-tenant architecture",
+      "Scalable cloud infrastructure"
+    ]
+  },
+  "process": {
+    "title": "Our SaaS Development Process",
+    "steps": [
+      {
+        "title": "Requirements Analysis",
+        "description": "Deep dive into your business needs, user requirements, and technical specifications."
+      },
+      {
+        "title": "Architecture & Design",
+        "description": "Design scalable architecture and user experience that supports growth and complex workflows."
+      },
+      {
+        "title": "Development & Testing",
+        "description": "Agile development with continuous testing to ensure quality and reliability."
+      },
+      {
+        "title": "Deployment & Scaling",
+        "description": "Launch on robust cloud infrastructure designed to handle growth and peak usage."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Ready to Launch Your SaaS Platform?",
+    "description": "Let's build software that powers your business growth. Contact us for a free consultation.",
+    "button": "Start Building"
+  }
+}

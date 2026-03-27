@@ -1,0 +1,88 @@
+{
+  "title": "MVP i Prototypy",
+  "subtitle": "Przemień swój pomysł w działający produkt szybko",
+  "hero": {
+    "title": "Od pomysłu do MVP w rekordowym czasie",
+    "description": "Budujemy minimalne produkty możliwe do wprowadzenia na rynek i prototypy, które weryfikują Twoją koncepcję biznesową szybko i ekonomicznie. Koniec z nieskończonym planowaniem – uzyskaj coś, co prawdziwi użytkownicy mogą przetestować i pokochać.",
+    "cta": "Rozpocznij swój MVP"
+  },
+  "whatIs": {
+    "title": "Czym jest MVP?",
+    "description": "MVP (Minimum Viable Product) to najprostsza wersja Twojego produktu, która pozwala przetestować pomysł z prawdziwymi użytkownikami. To nie jest pełnofunkcyjna aplikacja – to sprytny punkt wyjścia, który udowadnia, że koncepcja działa.",
+    "benefits": [
+      "Zweryfikuj swój pomysł przed zainwestowaniem milionów",
+      "Uzyskaj opinie użytkowników na wczesnym etapie",
+      "Pociągnij inwestorów działającym prototypem",
+      "Dowiedz się, które funkcje naprawdę mają znaczenie dla klientów"
+    ]
+  },
+  "process": {
+    "title": "Nasz proces tworzenia MVP",
+    "steps": [
+      {
+        "title": "Odkrywanie i planowanie",
+        "description": "Zanurzamy się głęboko w Twój pomysł, rozumiemy użytkowników i mapujemy kluczowe funkcje, które mają największe znaczenie."
+      },
+      {
+        "title": "Projektowanie i prototypowanie",
+        "description": "Szybkie wireframe'y i makiety pomagają wizualizować produkt przed rozpoczęciem kodowania."
+      },
+      {
+        "title": "Budowa i testowanie",
+        "description": "Rozwijamy podstawowe funkcje i rygorystycznie testujemy, aby zapewnić płynne działanie."
+      },
+      {
+        "title": "Uruchomienie i nauka",
+        "description": "Przedstaw swój MVP użytkownikom i zbierz opinie, które poprowadzą następne kroki."
+      }
+    ]
+  },
+  "whatWeBuild": {
+    "title": "Jakie MVP budujemy?",
+    "types": [
+      {
+        "title": "Aplikacje webowe",
+        "description": "Narzędzia i platformy przegl\u0105darkowe, z kt\u00f3rych Twoi klienci mog\u0105 korzysta\u0107 od pierwszego dnia bez instalowania czegokolwiek."
+      },
+      {
+        "title": "Aplikacje mobilne",
+        "description": "Prototypy na iOS i Android, kt\u00f3re trafiaj\u0105 w r\u0119ce u\u017cytkownik\u00f3w i generuj\u0105 realne opinie w kr\u00f3tkim czasie."
+      },
+      {
+        "title": "Produkty SaaS",
+        "description": "Platformy wielou\u017cytkownikowe z kontami, subskrypcjami i automatyzacj\u0105 kluczowych procesów wbudowan\u0105 od pocz\u0105tku."
+      },
+      {
+        "title": "Marketplace i portale",
+        "description": "Platformy dwustronne \u0142\u0105cz\u0105ce kupuj\u0105cych i sprzedawc\u00f3w lub portale usprawniaj\u0105ce wewn\u0119trzne operacje."
+      }
+    ]
+  },
+  "features": {
+    "title": "Co zawiera ka\u017cde MVP",
+    "list": [
+      "Uwierzytelnianie u\u017cytkownik\u00f3w i zarz\u0105dzanie kontami",
+      "G\u0142\u00f3wne przep\u0142ywy u\u017cytkownika \u2013 bez zb\u0119dnych element\u00f3w",
+      "Responsywny design dzia\u0142aj\u0105cy na urz\u0105dzeniach mobilnych",
+      "Podstawowe analityki i \u015bledzenie zdarze\u0144",
+      "Niezb\u0119dne integracje zewn\u0119trzne (p\u0142atno\u015bci, e-mail itp.)",
+      "Wdro\u017cenie na skalowalnej infrastrukturze chmurowej",
+      "W\u0142asno\u015b\u0107 kodu \u017ar\u00f3d\u0142owego \u2013 Twoje od pierwszego dnia"
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Dlaczego warto wybrać nas do swojego MVP?",
+    "points": [
+      "15+ lat doświadczenia w budowaniu udanych MVP",
+      "Szybka realizacja – od pomysłu do uruchomienia w tygodnie",
+      "Skupienie na tym, co ważne – usuwamy niepotrzebne elementy",
+      "Przejrzyste ceny bez ukrytych kosztów",
+      "Ciągłe wsparcie po uruchomieniu"
+    ]
+  },
+  "cta": {
+    "title": "Gotowy na zbudowanie swojego MVP?",
+    "description": "Przemieńmy Twój pomysł w rzeczywistość. Skontaktuj się z nami już dziś na bezpłatną konsultację.",
+    "button": "Rozpocznij"
+  }
+}

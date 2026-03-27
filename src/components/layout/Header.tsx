@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styled from '@emotion/styled';
 import { navigate } from 'gatsby';
 import { Link, useI18next } from 'gatsby-plugin-react-i18next';
@@ -83,8 +83,70 @@ const NavLink = styled.a<{ isScrolled: boolean }>`
   }
 `;
 
+const DropdownWrapper = styled.div`
+  position: relative;
+`;
+
+const DropdownButton = styled.button<{ isScrolled: boolean }>`
+  color: ${({ isScrolled }) =>
+    isScrolled ? theme.colors.backgroundDark : theme.colors.white};
+  font-weight: ${theme.fontWeights.medium};
+  transition: ${theme.transitions.base};
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: ${theme.spacing[1]};
+  
+  &:hover {
+    color: ${theme.colors.textSecondary};
+  }
+  
+  @media (max-width: ${theme.breakpoints.sm}) {
+    font-size: ${theme.fontSizes.sm};
+  }
+`;
+
+const DropdownArrow = styled.span<{ isOpen: boolean }>`
+  transition: transform ${theme.transitions.base};
+  transform: ${({ isOpen }) => isOpen ? 'rotate(180deg)' : 'rotate(0deg)'};
+`;
+
+const DropdownMenu = styled.div<{ isOpen: boolean; isScrolled: boolean }>`
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: ${theme.colors.white};
+  border-radius: ${theme.borderRadius.md};
+  box-shadow: ${theme.shadows.lg};
+  padding: ${theme.spacing[2]} 0;
+  min-width: 200px;
+  opacity: ${({ isOpen }) => isOpen ? 1 : 0};
+  visibility: ${({ isOpen }) => isOpen ? 'visible' : 'hidden'};
+  transform: ${({ isOpen }) => isOpen ? 'translateY(0)' : 'translateY(-10px)'};
+  transition: all ${theme.transitions.base};
+  z-index: ${theme.zIndex.dropdown};
+`;
+
+const DropdownItem = styled(Link)`
+  display: block;
+  padding: ${theme.spacing[3]} ${theme.spacing[4]};
+  color: ${theme.colors.backgroundDark};
+  text-decoration: none;
+  font-weight: ${theme.fontWeights.medium};
+  transition: ${theme.transitions.base};
+  
+  &:hover {
+    background-color: ${theme.colors.background};
+    color: ${theme.colors.accent};
+  }
+`;
+
 export const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const { t, language } = useI18next();
 
   useEffect(() => {
@@ -94,6 +156,17 @@ export const Header: React.FC = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   const scrollToSection = (id: string) => (e: React.MouseEvent) => {
@@ -109,6 +182,10 @@ export const Header: React.FC = () => {
     }
   };
 
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     <HeaderWrapper isScrolled={isScrolled}>
       <Container>
@@ -121,12 +198,26 @@ export const Header: React.FC = () => {
           </LogoLink>
           <NavLinks>
             <MainNavLinks>
-              <NavLink isScrolled={isScrolled} href="#services" onClick={scrollToSection('services')}>
-                {t('navigation.services')}
+              <NavLink isScrolled={isScrolled} as={Link} to="/">
+                {t('navigation.home')}
               </NavLink>
-              <NavLink isScrolled={isScrolled} href="#packages" onClick={scrollToSection('packages')}>
-                {t('navigation.packages')}
-              </NavLink>
+              <DropdownWrapper ref={dropdownRef}>
+                <DropdownButton isScrolled={isScrolled} onClick={toggleDropdown}>
+                  {t('navigation.packages')}
+                  <DropdownArrow isOpen={isDropdownOpen}>▼</DropdownArrow>
+                </DropdownButton>
+                <DropdownMenu isOpen={isDropdownOpen} isScrolled={isScrolled}>
+                  <DropdownItem to="/services/mvp-prototypes">
+                    {t('navigation.packagesDropdown.mvpPrototypes')}
+                  </DropdownItem>
+                  <DropdownItem to="/services/websites">
+                    {t('navigation.packagesDropdown.websites')}
+                  </DropdownItem>
+                  <DropdownItem to="/services/saas-platforms">
+                    {t('navigation.packagesDropdown.saasPlatforms')}
+                  </DropdownItem>
+                </DropdownMenu>
+              </DropdownWrapper>
               <NavLink isScrolled={isScrolled} href="#contact" onClick={scrollToSection('contact')}>
                 {t('navigation.contact')}
               </NavLink>

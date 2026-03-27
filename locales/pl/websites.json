@@ -1,0 +1,67 @@
+{
+  "title": "Strony internetowe",
+  "subtitle": "Piękne, szybkie strony, które zamieniają odwiedzających w klientów",
+  "hero": {
+    "title": "Strony internetowe, które pracują tak ciężko jak Ty",
+    "description": "Tworzymy oszałamiające strony internetowe, które nie tylko wyglądają niesamowicie, ale naprawdę przynoszą rezultaty. Od landing page'ów po pełne sklepy e-commerce, budujemy cyfrowe doświadczenia, które zamieniają odwiedzających w lojalnych klientów.",
+    "cta": "Zbuduj moją stronę"
+  },
+  "whatWeBuild": {
+    "title": "Jakie strony internetowe budujemy?",
+    "types": [
+      {
+        "title": "Strony firmowe",
+        "description": "Profesjonalna obecność online dla firm każdej wielkości. Prezentuj swoje usługi, opowiadaj swoją historię i ułatw klientom kontakt."
+      },
+      {
+        "title": "Sklepy e-commerce",
+        "description": "Pełnofunkcyjne sklepy online z bezpiecznymi płatnościami, zarządzaniem zapasami i wszystkim, czego potrzebujesz do skutecznej sprzedaży online."
+      },
+      {
+        "title": "Landing page",
+        "description": "Wysoko konwertujące strony jednokrotne zaprojektowane, aby zamieniać odwiedzających w leady lub klientów z jasnymi wezwaniami do działania."
+      },
+      {
+        "title": "Strony portfolio",
+        "description": "Pięknie prezentuj swoją pracę. Idealne dla freelancerów, agencji i profesjonalistów kreatywnych."
+      }
+    ]
+  },
+  "features": {
+    "title": "Co wyróżnia nasze strony internetowe?",
+    "list": [
+      "Błyskawiczne prędkości ładowania",
+      "Przyjazny dla urządzeń mobilnych responsywny design",
+      "Optymalizacja SEO dla wyszukiwarek",
+      "Bezpieczne i niezawodne hosting",
+      "Łatwe w użyciu zarządzanie treścią",
+      "Wbudowana analityka i śledzenie"
+    ]
+  },
+  "process": {
+    "title": "Jak budujemy Twoją stronę internetową",
+    "steps": [
+      {
+        "title": "Strategia i planowanie",
+        "description": "Rozumiemy Twoje cele, grupę docelową i jak wygląda sukces dla Twojej strony."
+      },
+      {
+        "title": "Projektowanie i rozwój",
+        "description": "Piękny design spotyka się z potężną funkcjonalnością. Kodujemy wszystko od podstaw dla optymalnej wydajności."
+      },
+      {
+        "title": "Testowanie i uruchomienie",
+        "description": "Rygorystyczne testowanie zapewnia, że wszystko działa doskonale przed uruchomieniem strony na żywo."
+      },
+      {
+        "title": "Wsparcie i wzrost",
+        "description": "Ciągła konserwacja i optymalizacja, aby utrzymać stronę w najlepszej formie."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Gotowy na stronę, która działa?",
+    "description": "Stwórzmy stronę, która przynosi rezultaty dla Twojej firmy. Rozpocznij z bezpłatną konsultacją.",
+    "button": "Rozpocznij budowę"
+  }
+}

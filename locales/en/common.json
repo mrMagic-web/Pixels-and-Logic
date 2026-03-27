@@ -6,8 +6,13 @@
     "keywords": "software house, web development, IT team leasing, system integration, MVP development, custom software, React, Node.js, TypeScript"
   },
   "navigation": {
-    "services": "Services",
+    "home": "Home",
     "packages": "Packages",
+    "packagesDropdown": {
+      "mvpPrototypes": "MVP & Prototypes",
+      "websites": "Websites",
+      "saasPlatforms": "SaaS & Platforms"
+    },
     "blog": "Blog",
     "contact": "Contact",
     "mvp": "MVP in 5 days",

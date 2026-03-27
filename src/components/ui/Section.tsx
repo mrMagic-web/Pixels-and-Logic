@@ -12,7 +12,7 @@ interface SectionProps {
 
 const StyledSection = styled.section<{ backgroundColor?: string }>`
   ${mixins.section}
-  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'};
+  background-color: ${({ backgroundColor }) => backgroundColor || 'transparent'} !important;
   position: relative;
 `;
 

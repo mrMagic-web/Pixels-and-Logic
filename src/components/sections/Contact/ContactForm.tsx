@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import { useTranslation } from 'gatsby-plugin-react-i18next';
 import { useForm, ValidationError } from '@formspree/react';
@@ -83,9 +83,47 @@ const ErrorText = styled.span`
   margin-top: ${theme.spacing[1]};
 `;
 
+const Select = styled.select`
+  padding: ${theme.spacing[3]};
+  font-size: ${theme.fontSizes.base};
+  font-family: ${theme.fonts.body};
+  border: 2px solid ${theme.colors.navy};
+  border-radius: ${theme.borderRadius.md};
+  background-color: ${theme.colors.white};
+  color: ${theme.colors.text};
+  transition: ${theme.transitions.base};
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+    border-color: ${theme.colors.accent};
+  }
+`;
+
+const ALL_PACKAGES = [
+    'Starter MVP',
+    'Professional MVP',
+    'Custom MVP',
+    'Landing Page',
+    'Business Website',
+    'Custom Website',
+    'Basic SaaS',
+    'Growth SaaS',
+    'Custom SaaS',
+];
+
 export const ContactForm: React.FC = () => {
     const { t } = useTranslation('contact');
     const [state, handleSubmit] = useForm("xdazeego");
+    const [selectedPackage, setSelectedPackage] = useState('');
+
+    useEffect(() => {
+        const handler = (e: Event) => {
+            setSelectedPackage((e as CustomEvent<string>).detail);
+        };
+        window.addEventListener('packageSelected', handler);
+        return () => window.removeEventListener('packageSelected', handler);
+    }, []);
 
     if (state.succeeded) {
         return (
@@ -106,8 +144,8 @@ export const ContactForm: React.FC = () => {
                     placeholder={t('form.namePlaceholder')}
                     required
                 />
-                <ValidationError 
-                    prefix={t('form.name')} 
+                <ValidationError
+                    prefix={t('form.name')}
                     field="name"
                     errors={state.errors}
                     as={ErrorText}
@@ -123,12 +161,27 @@ export const ContactForm: React.FC = () => {
                     placeholder={t('form.emailPlaceholder')}
                     required
                 />
-                <ValidationError 
-                    prefix={t('form.email')} 
+                <ValidationError
+                    prefix={t('form.email')}
                     field="email"
                     errors={state.errors}
                     as={ErrorText}
                 />
+            </FormGroup>
+
+            <FormGroup>
+                <Label htmlFor="package">{t('form.package')}</Label>
+                <Select
+                    id="package"
+                    name="package"
+                    value={selectedPackage}
+                    onChange={e => setSelectedPackage(e.target.value)}
+                >
+                    <option value="">{t('form.packagePlaceholder')}</option>
+                    {ALL_PACKAGES.map(pkg => (
+                        <option key={pkg} value={pkg}>{pkg}</option>
+                    ))}
+                </Select>
             </FormGroup>
 
             <FormGroup>
@@ -139,8 +192,8 @@ export const ContactForm: React.FC = () => {
                     placeholder={t('form.messagePlaceholder')}
                     required
                 />
-                <ValidationError 
-                    prefix={t('form.message')} 
+                <ValidationError
+                    prefix={t('form.message')}
                     field="message"
                     errors={state.errors}
                     as={ErrorText}

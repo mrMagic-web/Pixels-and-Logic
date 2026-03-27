@@ -1,0 +1,79 @@
+{
+  "title": "SaaS i Platformy",
+  "subtitle": "Skalowalne rozwiązania programowe, które rosną wraz z Twoją firmą",
+  "hero": {
+    "title": "Oprogramowanie jako usługa, które się skaluje",
+    "description": "Budujemy potężne platformy SaaS i aplikacje webowe, które obsługują tysiące użytkowników. Od narzędzi opartych na subskrypcji po złożone platformy enterprise, tworzymy oprogramowanie, które skaluje się wraz z Twoim sukcesem.",
+    "cta": "Zbuduj moją platformę"
+  },
+  "whatIsSaas": {
+    "title": "Czym jest SaaS?",
+    "description": "Software as a Service (SaaS) to oprogramowanie oparte na chmurze, do którego użytkownicy uzyskują dostęp przez internet. Zamiast kupować i instalować oprogramowanie na poszczególnych komputerach, użytkownicy subskrybują usługę i uzyskują do niej dostęp przez przeglądarkę internetową.",
+    "benefits": [
+      "Dostępne z dowolnego miejsca z internetem",
+      "Automatyczne aktualizacje i konserwacja",
+      "Płacisz tylko za to, czego używasz",
+      "Łatwo skaluje się wraz ze wzrostem firmy",
+      "Brak konieczności instalacji sprzętu lub oprogramowania"
+    ]
+  },
+  "platformsWeBuild": {
+    "title": "Rodzaje platform, które tworzymy",
+    "types": [
+      {
+        "title": "Narzędzia biznesowe",
+        "description": "Niestandardowe oprogramowanie dla wewnętrznych procesów biznesowych – zarządzanie projektami, CRM, zapasy, analityka i więcej."
+      },
+      {
+        "title": "Markety",
+        "description": "Łącz kupujących i sprzedających z bezpiecznym przetwarzaniem transakcji, zarządzaniem użytkownikami i funkcjami marketplace."
+      },
+      {
+        "title": "Usługi subskrypcyjne",
+        "description": "Modele przychodów cyklicznych z kontami użytkowników, integracją płatności i zarządzaniem subskrypcjami."
+      },
+      {
+        "title": "Aplikacje enterprise",
+        "description": "Złożone rozwiązania programowe dla dużych organizacji z zaawansowanymi funkcjami i integracjami."
+      }
+    ]
+  },
+  "features": {
+    "title": "Funkcje platform, które włączamy",
+    "list": [
+      "Uwierzytelnianie użytkowników i bezpieczeństwo",
+      "Przetwarzanie płatności i rozliczenia",
+      "Powiadomienia w czasie rzeczywistym",
+      "Analityka danych i raportowanie",
+      "Integracje API",
+      "Architektura wielomandantowa",
+      "Skalowalna infrastruktura chmurowa"
+    ]
+  },
+  "process": {
+    "title": "Nasz proces rozwoju SaaS",
+    "steps": [
+      {
+        "title": "Analiza wymagań",
+        "description": "Głębokie zanurzenie w potrzeby biznesowe, wymagania użytkowników i specyfikacje techniczne."
+      },
+      {
+        "title": "Architektura i projektowanie",
+        "description": "Projektowanie skalowalnej architektury i doświadczenia użytkownika, które wspiera wzrost i złożone przepływy pracy."
+      },
+      {
+        "title": "Rozwój i testowanie",
+        "description": "Agile'owy rozwój z ciągłym testowaniem, aby zapewnić jakość i niezawodność."
+      },
+      {
+        "title": "Wdrażanie i skalowanie",
+        "description": "Uruchomienie na solidnej infrastrukturze chmurowej zaprojektowanej do obsługi wzrostu i szczytowego użytkowania."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Gotowy na uruchomienie swojej platformy SaaS?",
+    "description": "Zbudujmy oprogramowanie, które napędza wzrost Twojej firmy. Skontaktuj się z nami na bezpłatną konsultację.",
+    "button": "Rozpocznij budowę"
+  }
+}
