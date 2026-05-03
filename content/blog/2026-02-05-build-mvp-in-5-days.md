@@ -45,6 +45,5 @@ We've shipped projects like Plannero, we're building the pattern marketplace Sew
 
 Ready to stop thinking about your idea and start showing it to the world?
 
-Reach out at [contact@pixelsandlogic.eu](mailto:contact@pixelsandlogic.eu) or fill the form on our site.
 
 **Let's build something awesome together.**

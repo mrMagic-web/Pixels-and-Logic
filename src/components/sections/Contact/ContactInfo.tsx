@@ -89,7 +89,7 @@ export const ContactInfo: React.FC = () => {
       <ProfileName>Maciej</ProfileName>
       <ProfileTagline>{t('subtitle')}</ProfileTagline>
 
-      <InfoItem>
+      {/* <InfoItem>
         <IconWrapper>✉️</IconWrapper>
         <InfoContent>
           <Label>Email</Label>
@@ -97,7 +97,7 @@ export const ContactInfo: React.FC = () => {
             {t('info.email')}
           </Value>
         </InfoContent>
-      </InfoItem>
+      </InfoItem> */}
 
       <InfoItem>
         <IconWrapper>📱</IconWrapper>
