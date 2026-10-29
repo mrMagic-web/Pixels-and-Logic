@@ -7,40 +7,59 @@ interface TechIconProps {
   icon: string;
 }
 
-const IconWrapper = styled.div`
+const Tile = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: ${theme.spacing[3]};
-  padding: ${theme.spacing[4]};
-  background-color: ${theme.colors.white};
+  padding: 1.25rem;
   border-radius: ${theme.borderRadius.lg};
-  transition: ${theme.transitions.base};
-  
+  background-color: ${theme.colors.surfaceLow};
+  transition: background-color ${theme.transitions.base};
+
   &:hover {
-    transform: translateY(-4px);
-    box-shadow: ${theme.shadows.md};
+    background-color: ${theme.colors.surfaceContainerHigh};
   }
 `;
 
+/*
+ * The devicon logos are full-colour and some (Next.js, AWS) are dark,
+ * so they sit on a light chip to stay readable on the dark tile.
+ */
+const IconChip = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: ${theme.borderRadius.md};
+  background-color: ${theme.colors.onSurface};
+`;
+
 const Icon = styled.img`
-  width: 64px;
-  height: 64px;
+  width: 28px;
+  height: 28px;
   object-fit: contain;
 `;
 
 const Name = styled.span`
-  font-size: ${theme.fontSizes.sm};
-  color: ${theme.colors.textSecondary};
-  font-weight: ${theme.fontWeights.medium};
+  font-family: ${theme.fonts.label};
+  font-size: ${theme.fontSizes.xs};
+  line-height: 16px;
+  font-weight: ${theme.fontWeights.semibold};
   text-align: center;
+  color: ${theme.colors.onSurface};
 `;
 
 export const TechIcon: React.FC<TechIconProps> = ({ name, icon }) => {
   return (
-    <IconWrapper>
-      <Icon src={icon} alt={name} />
+    <Tile>
+      <IconChip>
+        {/* empty alt: the visible label below already names the technology */}
+        <Icon src={icon} alt="" loading="lazy" />
+      </IconChip>
       <Name>{name}</Name>
-    </IconWrapper>
+    </Tile>
   );
 };

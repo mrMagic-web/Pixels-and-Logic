@@ -1,153 +1,145 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { theme } from '../../../styles/theme';
-import { Button } from '../../ui/Button';
 
-const Card = styled.div`
-  background: ${theme.colors.white};
-  border-radius: ${theme.borderRadius.lg};
-  overflow: hidden;
-  box-shadow: ${theme.shadows.md};
-  transition: ${theme.transitions.base};
-  display: flex;
-  flex-direction: column;
+const ImageWrapper = styled.div`
   position: relative;
-  
-  &:hover {
-    box-shadow: ${theme.shadows.lg};
-  }
-`;
-
-const StatusBadge = styled.div`
-  position: absolute;
-  top: ${theme.spacing[0]};
-  right: ${theme.spacing[0]};
-  background: ${theme.colors.accent};
-  color: ${theme.colors.white};
-  padding: ${theme.spacing[1]} ${theme.spacing[3]};
-  border-radius: ${theme.borderRadius.full};
-  font-size: ${theme.fontSizes.sm};
-  font-weight: ${theme.fontWeights.medium};
-  z-index: 1;
-`;
-
-const ImageGallery = styled.div`
-  position: relative;
-  height: 400px;
-  background: ${theme.colors.background};
-  overflow: hidden;
-  
-  @media (max-width: ${theme.breakpoints.md}) {
-    height: 300px;
-  }
-`;
-
-const MainImage = styled.img`
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: ${theme.transitions.base};
-`;
-
-const ThumbnailsWrapper = styled.div`
-  position: absolute;
-  bottom: ${theme.spacing[4]};
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: ${theme.spacing[2]};
-  padding: ${theme.spacing[2]};
-  background: rgba(0, 21, 66, 0.7);
-  backdrop-filter: blur(4px);
-  border-radius: ${theme.borderRadius.md};
-`;
-
-const Thumbnail = styled.button<{ isActive: boolean }>`
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  border: none;
-  background: ${({ isActive }) =>
-    isActive ? theme.colors.accent : 'rgba(255, 255, 255, 0.5)'};
-  cursor: pointer;
-  transition: ${theme.transitions.base};
-  
-  &:hover {
-    background: ${theme.colors.accent};
-  }
+  height: 240px;
+  overflow: hidden;
+  background-color: ${theme.colors.surfaceLowest};
 `;
 
 const ProjectImage = styled.img`
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  transition: transform 500ms ease;
+`;
+
+const ImageFade = styled.div`
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to top, ${theme.colors.surfaceLow}, transparent 60%);
+  pointer-events: none;
+`;
+
+const StatusBadge = styled.span`
+  position: absolute;
+  top: ${theme.spacing[4]};
+  right: ${theme.spacing[4]};
+  padding: ${theme.spacing[1]} ${theme.spacing[3]};
+  border-radius: ${theme.borderRadius.full};
+  background-color: ${theme.colors.accent}33;
+  color: ${theme.colors.accent};
+  font-family: ${theme.fonts.label};
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: ${theme.fontWeights.semibold};
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  z-index: 1;
 `;
 
 const Content = styled.div`
-  padding: ${theme.spacing[8]};
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  justify-content: space-between;
+  flex: 1;
+  gap: ${theme.spacing[6]};
+  padding: ${theme.spacing[8]};
+`;
+
+const TextBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: ${theme.spacing[3]};
 `;
 
 const ProjectName = styled.h3`
-  font-size: ${theme.fontSizes['2xl']};
-  color: ${theme.colors.primary};
-  margin-bottom: ${theme.spacing[4]};
+  margin: 0;
+  font-family: ${theme.fonts.heading};
+  font-size: ${theme.fontSizes.xl};
+  line-height: 28px;
+  font-weight: ${theme.fontWeights.semibold};
+  color: ${theme.colors.onSurface};
+  transition: color ${theme.transitions.base};
 `;
 
 const Description = styled.p`
-  font-size: ${theme.fontSizes.base};
-  color: ${theme.colors.textSecondary};
-  margin-bottom: ${theme.spacing[6]};
-  line-height: 1.6;
+  margin: 0;
+  font-family: ${theme.fonts.body};
+  font-size: 15px;
+  line-height: 24px;
+  color: ${theme.colors.onSurfaceVariant};
 `;
 
 const TechStack = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: ${theme.spacing[2]};
-  margin-bottom: ${theme.spacing[4]};
+  padding-top: ${theme.spacing[2]};
 `;
 
 const TechBadge = styled.span`
-  padding: ${theme.spacing[1]} ${theme.spacing[3]};
-  background: ${theme.colors.teal};
-  color: ${theme.colors.primary};
-  border-radius: ${theme.borderRadius.full};
-  font-size: ${theme.fontSizes.sm};
+  padding: ${theme.spacing[1]} 0.625rem;
+  border-radius: ${theme.borderRadius.md};
+  background-color: ${theme.colors.surfaceContainerHigh};
+  color: ${theme.colors.accentSoft};
+  font-family: ${theme.fonts.label};
+  font-size: 11px;
+  line-height: 14px;
   font-weight: ${theme.fontWeights.medium};
 `;
 
-const ButtonWrapper = styled.div`
-  margin-top: auto;
+const ExternalIcon = styled.svg`
+  width: 16px;
+  height: 16px;
 `;
 
-const Testimonial = styled.blockquote`
-  margin: ${theme.spacing[6]} 0;
-  padding: ${theme.spacing[6]};
-  background: ${theme.colors.background};
-  border-left: 4px solid ${theme.colors.accent};
+const ProjectLink = styled.a`
+  display: inline-flex;
+  align-items: center;
+  gap: ${theme.spacing[2]};
+  padding: 0.625rem 1.25rem;
   border-radius: ${theme.borderRadius.md};
-`;
-
-const TestimonialText = styled.p`
-  font-size: ${theme.fontSizes.base};
-  color: ${theme.colors.text};
-  font-style: italic;
-  margin-bottom: ${theme.spacing[4]};
-  line-height: 1.6;
-`;
-
-const TestimonialAuthor = styled.div`
-  font-size: ${theme.fontSizes.sm};
-  color: ${theme.colors.textSecondary};
-`;
-
-const AuthorName = styled.div`
+  background-color: ${theme.colors.surfaceContainerHigh};
+  color: ${theme.colors.onSurface};
+  font-family: ${theme.fonts.label};
+  font-size: ${theme.fontSizes.xs};
+  line-height: 16px;
   font-weight: ${theme.fontWeights.semibold};
-  color: ${theme.colors.primary};
+  text-decoration: none;
+  transition: all ${theme.transitions.base};
+
+  &:hover {
+    background-color: ${theme.colors.primary};
+    color: ${theme.colors.onPrimary};
+  }
+`;
+
+/* Card acts as the hover "group" (like Tailwind's `group`) */
+const Card = styled.article`
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: ${theme.borderRadius.xl};
+  background-color: ${theme.colors.surfaceLow};
+  box-shadow: ${theme.shadows.md};
+  transition: background-color ${theme.transitions.base};
+
+  &:hover {
+    background-color: ${theme.colors.surfaceContainer};
+  }
+
+  &:hover ${ProjectImage} {
+    transform: scale(1.05);
+  }
+
+  &:hover ${ProjectName} {
+    color: ${theme.colors.primarySoft};
+  }
 `;
 
 interface ProjectCardProps {
@@ -158,7 +150,7 @@ interface ProjectCardProps {
   testimonial?: {
     text: string;
     author: string;
-    position: string;
+    position?: string;
   };
   link: string;
   cta: string;
@@ -170,67 +162,42 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   description,
   images,
   technologies,
-  testimonial,
   link,
   cta,
-  status
+  status,
 }) => {
-  const [activeImage, setActiveImage] = useState(0);
+  const image = images && images.length > 0 ? images[0] : null;
 
   return (
     <Card>
-      {status && <StatusBadge>{status}</StatusBadge>}
-      {/* <ImageGallery>
-        <MainImage src={images[activeImage].url} alt={images[activeImage].alt} />
-        {images.length > 1 && (
-          <ThumbnailsWrapper>
-            {images.map((_, index) => (
-              <Thumbnail
-                key={index}
-                isActive={index === activeImage}
-                onClick={() => setActiveImage(index)}
-                aria-label={`View image ${index + 1}`}
-              />
-            ))}
-          </ThumbnailsWrapper>
-        )}
-      </ImageGallery> */}
+      <ImageWrapper>
+        {image && <ProjectImage src={image.url} alt={image.alt} loading="lazy" />}
+        <ImageFade />
+        {status && <StatusBadge>{status}</StatusBadge>}
+      </ImageWrapper>
 
       <Content>
-        <ProjectName>{name}</ProjectName>
-        {images && images.length > 0 && (
-          <ProjectImage src={images[0].url} alt={images[0].alt} />
-        )}
-        <Description>{description}</Description>
+        <TextBlock>
+          <ProjectName>{name}</ProjectName>
+          <Description>{description}</Description>
+          <TechStack>
+            {technologies.map((tech, index) => (
+              <TechBadge key={index}>{tech}</TechBadge>
+            ))}
+          </TechStack>
+        </TextBlock>
 
-        <TechStack>
-          {technologies.map((tech, index) => (
-            <TechBadge key={index}>{tech}</TechBadge>
-          ))}
-        </TechStack>
-
-        {/* {testimonial && testimonial.author && (
-                    <Testimonial>
-                        <TestimonialText>"{testimonial.text}"</TestimonialText>
-                        <TestimonialAuthor>
-                            <AuthorName>{testimonial.author}</AuthorName>
-                            {testimonial.position}
-                        </TestimonialAuthor>
-                    </Testimonial>
-                )} */}
-
-        <ButtonWrapper>
-          <Button
-            as="a"
-            href={link}
-            size="lg"
-            fullWidth
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {cta}
-          </Button>
-        </ButtonWrapper>
+        <div>
+          <ProjectLink href={link} target="_blank" rel="noopener noreferrer">
+            <span>{cta}</span>
+            <ExternalIcon viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+              strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </ExternalIcon>
+          </ProjectLink>
+        </div>
       </Content>
     </Card>
   );
